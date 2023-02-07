@@ -1,24 +1,27 @@
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'; 
+import thunk from 'redux-thunk' 
+import sessionReducer from './session'
+import session from './session';
+
 const rootReducer = combineReducers({
-    teas: teaReducer,
-    transactions: transactionReducer,
-    user: userReducer
+  session
 });
 
 
-let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    let initialState = {};
+let enhancer;
 
-    if (currentUser) {
-        initialState = {
-            users: {
-            [currentUser.id]: currentUser
-            }
-        };
-    };
+if (process.env.NODE_ENV === 'production') {
+  enhancer = applyMiddleware(thunk);
+} else {
+  const logger = require('redux-logger').default;
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+}
+
+const configureStore = (preloadedState) => {
+    return createStore(rootReducer, preloadedState, enhancer);
+  };
 
 
-    import { createUser, loginUser, logoutUser } from './store/userReducer'; 
-
-    window.createUser = createUser
-    window.loginUser = loginUser
-    window.logoutUser = logoutUser
+ export default configureStore;
