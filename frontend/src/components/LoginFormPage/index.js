@@ -3,6 +3,7 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import logo from '../images/logo.JPG';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -31,8 +32,17 @@ function LoginFormPage() {
       });
   }
 
+  const handleDemoUser = (e) => {
+    setCredential('guest@guest.com');
+    setPassword('password');
+  }
+
   return (
     <div className= "loginPage">
+      <div id="logoImage">
+        <img src={logo} alt=""/>
+      </div>
+      <br/>
       <form className="loginForm" onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
@@ -59,7 +69,10 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit" id= "submitButton">LOG IN</button>
+        <div className="buttons">
+          <button type="submit" id="demoButton" onClick={handleDemoUser}>DEMO USER</button>
+          <button type="submit" id="submitButton">LOG IN</button>
+        </div>
       </form>
     </div>
   );
