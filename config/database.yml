@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Symphonify_production
-  username: Symphonify
-  password: <%= ENV["SYMPHONIFY_DATABASE_PASSWORD"] %>
+  durl: <%= ENV['DATABASE_URL'] %>
