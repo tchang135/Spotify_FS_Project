@@ -16,7 +16,6 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
 }
 
-// ...
 
 const renderApplication = () => {
   ReactDOM.render(

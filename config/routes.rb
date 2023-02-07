@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :show, :destroy]
   end
 
+  post 'api/test', to: 'application#test'
+
   get '*path', to: "static_pages#frontend_index"
 end
