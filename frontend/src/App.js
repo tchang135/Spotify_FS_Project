@@ -9,12 +9,15 @@ function App() {
     <>
       <Navigation />
         <Switch>
+          <>
           <Route path="/login">
             <LoginFormPage />
           </Route>
+          <br/>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          </>
         </Switch>
     </>
   );

@@ -12,7 +12,7 @@
 #  updated_at      :datetime         not null
 #  name            :string           not null
 #
-class User < ApplicationRecord
+class User < ApplicationRecord 
     validates :username, :email, :name, :password_digest, :session_token, 
               :birth_date, presence: true
     validates :username, 
