@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { restoreSession } from './store/csrf';
 
-  restoreSession().then(initializeApp)
+restoreSession().then(initializeApp)
 
 const initializeApp = () => {
   ReactDOM.render(
