@@ -10,8 +10,8 @@ class ApplicationController < ActionController::API
     end
 
     def require_logged_in
-        if !logged_in?
-            render json: { errors: ['Must be logged in'] }, status: :unauthorized
+        unless current_user
+            render json: { message: 'Unauthorized' }, status: :unauthorized 
         end
     end
 
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::API
         session[:session_token] = user.reset_session_token!
     end
 
-    def logout
+    def logout!
         current_user.reset_session_token!
         session[:session_token] = nil
         @current_user = nil
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::API
           render json: ['No current user']
         end
       end
-      
+
     private
     def snake_case_params
         params.deep_transform_keys!(&:underscore)
