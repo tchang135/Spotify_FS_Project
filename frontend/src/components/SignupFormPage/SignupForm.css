@@ -1,3 +1,9 @@
+.signupPage {
+    height: 100%;
+    max-width: 100%;
+    background-color: white;
+}
+
 #imgS {
     display: block;
     margin-left: auto;
@@ -89,4 +95,5 @@
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 5px;
+    margin-bottom: 150px;
 }

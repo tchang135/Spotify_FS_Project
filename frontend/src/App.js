@@ -4,19 +4,20 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 
-
-
 function App() {
   return (
     <>
-      <Navigation/>
+      <Navigation />
         <Switch>
+          <>
           <Route path="/login">
             <LoginFormPage />
           </Route>
+          <br/>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          </>
         </Switch>
     </>
   );
