@@ -45,9 +45,9 @@ function LoginFormPage() {
       <br/>
       <div className="staticButtons">
         <p id="loginText">To continue, log in to Symphonify</p>
-        <button id="facebook">Continue with Facebook</button>
+        <button id="facebook">GITHUB</button>
         <br/>
-        <button id="apple">Continue with Apple</button>
+        <button id="apple">LINKEDIN</button>
         <br/>
       </div>
       <br/>

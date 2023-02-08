@@ -2,7 +2,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20px;
     width: 200px;
     height: 70px;
 }
@@ -21,41 +20,56 @@
     align-items: center;
 }
 
+#signupHeader {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
 #header {
     border-width: 100%;
     border-bottom: 1px solid lightgray;
     padding-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    font-size: 23px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    font-size: 26px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 25px;
+    width: fit-content;
 }
 
 #textField {
     margin-top: 7px;
-    margin-bottom: 13px;
+    margin-bottom: 5px;
     height: 45px;
     width: 450px;
 }
 
 #fieldLabel {
     font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #signup {
     background-color: #1ed760;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 40px;
     border: none;  
     height: 50px;
     width: 135px;
-    margin-top: 30px;
-    margin-left: 180px;
-    margin-bottom: 20px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
 }
 
 .loginRedirect {
@@ -67,10 +81,12 @@
 .loginLink {
     font-family: Arial, Helvetica, sans-serif;
     color: #1ed760;
-    font-size: 14px;
+    font-size: 16px;
+    margin-left: 5px;
 }
 
 .loginText {
-    font-size: 14px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
 }
