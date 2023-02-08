@@ -14,7 +14,7 @@
 #
 class User < ApplicationRecord 
     validates :username, :email, :name, :password_digest, :session_token, 
-              :birth_date, presence: true
+              presence: true
     validates :username, 
         uniqueness: true, 
         length: { in: 3..30 }, 

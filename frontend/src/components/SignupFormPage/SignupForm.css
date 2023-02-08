@@ -1,0 +1,76 @@
+#imgS {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    width: 200px;
+    height: 70px;
+}
+
+#logoImageS {
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.signupItems {
+    display: grid; 
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    border-width: 100%;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 25px;
+}
+
+#textField {
+    margin-top: 7px;
+    margin-bottom: 13px;
+    height: 45px;
+    width: 450px;
+}
+
+#fieldLabel {
+    font-weight: bold;
+}
+
+#signup {
+    background-color: #1ed760;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-radius: 40px;
+    border: none;  
+    height: 50px;
+    width: 135px;
+    margin-top: 30px;
+    margin-left: 180px;
+    margin-bottom: 20px; 
+}
+
+.loginRedirect {
+    display: flex; 
+    justify-content: center;
+    
+}
+
+.loginLink {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1ed760;
+    font-size: 14px;
+}
+
+.loginText {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}

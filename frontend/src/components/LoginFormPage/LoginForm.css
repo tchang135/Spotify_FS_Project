@@ -2,41 +2,85 @@
     height: 100vh;
     width: 100%;
     background-color: white;
-    /* display: flex;
-    justify-content: center; */
 }
 
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20px;
     width: 230px;
     height: 80px;
 }
 
+.staticButtons {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 50%;
+}
+
 #logoImage {
-    height: 100px;
+    height: 90px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     width: 100%;
     border-width: 100%;
     border-bottom: 1px solid lightgray;
 }
 
+#loginText {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#facebook {
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 40px;
+    border-color: grey; 
+    height: 50px;
+    margin-top: 0px;
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: -18px;
+    width: 450px;
+}
+
+#apple {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 40px;
+    border-color: grey; 
+    height: 50px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: -18px;
+    width: 450px;
+}
 
 .loginForm {
     color: black;
     height: fit-content;
     width: 100%;
-    /* margin-top: px; */
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    border-width: 100%;
-
+    margin-top: 30px;
 }
 
 .loginForm > * {
@@ -60,10 +104,13 @@ img {
     display: flex;
     justify-content: space-between;
     margin-top: -10px;
+    border-width: 100%;
+    border-bottom: 1px solid lightgray;
 }
 
 #demoButton {
     background-color: #1ed760;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
@@ -71,12 +118,12 @@ img {
     height: 50px;
     width: 135px;
     margin-top: 30px;
-    /* margin-left: 100px; */
     margin-bottom: 20px; 
 }
 
 #submitButton {
     background-color: #1ed760;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
@@ -88,4 +135,38 @@ img {
     margin-bottom: 20px; 
 }
 
+#signupText {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.signupLink {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupText {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#linkButton {
+    background-color: #1ed760;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    border-radius: 40px;
+    text-decoration: none;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 450px;
+    padding-top: 13px;
+}

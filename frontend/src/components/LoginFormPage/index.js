@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './LoginForm.css';
 import logo from '../images/logo.JPG';
 
@@ -40,7 +40,15 @@ function LoginFormPage() {
   return (
     <div className= "loginPage">
       <div id="logoImage">
-        <img src={logo} alt=""/>
+        <img id="img"src={logo} alt=""/>
+      </div>
+      <br/>
+      <div className="staticButtons">
+        <p id="loginText">To continue, log in to Symphonify</p>
+        <button id="facebook">Continue with Facebook</button>
+        <br/>
+        <button id="apple">Continue with Apple</button>
+        <br/>
       </div>
       <br/>
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -74,6 +82,11 @@ function LoginFormPage() {
           <button type="submit" id="submitButton">LOG IN</button>
         </div>
       </form>
+
+      <div className="signupLink">
+        <p id='signupText'>Don't have an account?</p>
+        <Link to="/signup" id="linkButton">SIGN UP FOR SYMPHONIFY</Link>
+      </div>
     </div>
   );
 }
