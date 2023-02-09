@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_151457) do
     t.string "title", null: false
     t.bigint "artist_id", null: false
     t.date "published_date", null: false
+    t.string "album_photo_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"

@@ -11,15 +11,15 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
-  const hasEmail = (email) => {
+  const hasEmail = (error) => {
     const regex = /Email/i;
-    return regex.test(email)
+    return regex.test(error)
   }
 
   const hasUsername = (username) => {
@@ -32,14 +32,20 @@ function SignupFormPage() {
     return regex.test(password)
   }
 
-  const hasPasswordConfirm = (email) => {
-    const regex = /Email/i;
-    return regex.test(email)
-  }
+
+  // const returnErrors = (errors, field) => { 
+  //   const resultArray = [];
+  //   errors.forEach ((error) => {
+  //     if (field === 'Email') {
+  //       hasEmail(error) ? resultArray.push(error) : null
+  //     }
+  //   })
+  //   return resultArray
+  // }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password, name }))
         .catch(async (res) => {
@@ -56,8 +62,7 @@ function SignupFormPage() {
 
         });
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
-  };
+
 
   return (
     <div className="signupPage">
@@ -82,8 +87,9 @@ function SignupFormPage() {
             placeholder="Enter your email"
           />
         </label>
-        {hasEmail(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null}
-        {hasEmail(errors[1]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null}
+        {/* {returnErrors(errors, 'Email').map(error => 
+            <li> error </li>
+          )} */}
         <br />
         <label id="fieldLabel">
           Enter your username
@@ -97,7 +103,7 @@ function SignupFormPage() {
             placeholder="Enter your username"
           />
         </label>
-        {hasUsername(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null}
+        {/* {hasUsername(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null} */}
         <br />
         <label id="fieldLabel">
           Create a password
@@ -111,21 +117,8 @@ function SignupFormPage() {
             placeholder="Create a password."
           />
         </label>
-        {hasPassword(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null}
-        <br />
-        <label id="fieldLabel">
-          Please confirm your password
-          <br />
-          <input
-            id="textField"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            placeholder="Confirm your password."
-          />
-        </label>
-        {hasPasswordConfirm(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null}
+        {/* {hasPassword(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null} */}
+        
         <br />
         <label id="fieldLabel">
           What should we call you?
