@@ -12,6 +12,14 @@
     height: 70px;
 }
 
+#signupError {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    margin: auto;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
 #logoImageS {
     height: 100px;
     display: block;

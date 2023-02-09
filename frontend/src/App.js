@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 function App() {
   return (
     <>
-      <Navigation />
+      <Navigation className="navbar"/>
         <Switch>
           <>
           <Route path="/login">

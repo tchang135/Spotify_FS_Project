@@ -45,6 +45,9 @@ function LoginFormPage() {
       <br/>
       <div className="staticButtons">
         <p id="loginText">To continue, log in to Symphonify</p>
+        <ul id='loginError'>
+          {errors.map(error => <li key={error} id="backgroundError"><i class="fa-solid fa-circle-exclamation"></i> {error}</li>)}
+        </ul>
         <button id="facebook">LINKEDIN</button>
         <br/>
         <button id="apple">GITHUB</button>
@@ -52,9 +55,6 @@ function LoginFormPage() {
       </div>
       <br/>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
         <label id="fieldLabel">
           Email address or username
           <br/>

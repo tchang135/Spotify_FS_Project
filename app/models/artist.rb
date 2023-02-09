@@ -9,4 +9,10 @@
 #  updated_at  :datetime         not null
 #
 class Artist < ApplicationRecord
+    validates :name, :description, presence: true
+
+    has_many :albums,
+        foreign_key: :artist_id,
+        dependent: :destroy
+
 end
