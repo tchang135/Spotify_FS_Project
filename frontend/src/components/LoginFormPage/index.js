@@ -46,7 +46,7 @@ function LoginFormPage() {
       <div className="staticButtons">
         <p id="loginText">To continue, log in to Symphonify</p>
         <ul id='loginError'>
-          {errors.map(error => <li key={error} id="backgroundError"><i class="fa-solid fa-circle-exclamation"></i> {error}</li>)}
+          {errors.map(error => <li key={error} id="backgroundError"><i class="fa-solid fa-circle-exclamation"></i><span style={{marginLeft: '10px'}}>{error}</span></li>)}
         </ul>
         <button id="facebook">LINKEDIN</button>
         <br/>

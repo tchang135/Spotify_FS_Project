@@ -34,12 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_224547) do
   end
 
   create_table "playlists", force: :cascade do |t|
-    t.bigint "author_id_id", null: false
+    t.bigint "author_id", null: false
     t.string "title", null: false
     t.boolean "public", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id_id"], name: "index_playlists_on_author_id_id"
+    t.index ["author_id"], name: "index_playlists_on_author_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_224547) do
   end
 
   add_foreign_key "albums", "artists"
-  add_foreign_key "playlists", "users", column: "author_id_id"
+  add_foreign_key "playlists", "users", column: "author_id"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "artists"
 end

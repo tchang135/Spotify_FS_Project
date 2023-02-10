@@ -11,57 +11,45 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState("");
 
-  if (sessionUser) return <Redirect to="/" />;
+  const returnErrors = (errors, field) => {
+    let result = [];
+    for (let i = 0; i < errors.length; i++) {
+      if (errors[i].includes(field)) {
+        result.push(errors[i]);
+      }
+    }
+    return result;
+  };
 
-  const hasEmail = (error) => {
-    const regex = /Email/i;
-    return regex.test(error)
-  }
-
-  const hasUsername = (username) => {
-    const regex = /Username/i;
-    return regex.test(username)
-  }
-
-  const hasPassword = (password) => {
-    const regex = /Password is too short/i;
-    return regex.test(password)
-  }
-
-
-  // const returnErrors = (errors, field) => { 
-  //   const resultArray = [];
-  //   errors.forEach ((error) => {
-  //     if (field === 'Email') {
-  //       hasEmail(error) ? resultArray.push(error) : null
-  //     }
-  //   })
-  //   return resultArray
-  // }
-
+  const emailErrors = returnErrors(errors, 'Email');
+  const usernameErrors = returnErrors(errors, 'Username');
+  const passwordErrors = returnErrors(errors, 'Password');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password, name }))
-        .catch(async (res) => {
-          let data;
-          try {
-            // .clone() essentially allows you to read the response body twice
-            data = await res.clone().json();
-          } catch {
-            data = await res.text(); // Will hit this case if the server is down
-          }
-          if (data?.errors) setErrors(data.errors);
-          else if (data) setErrors([data]);
-          else setErrors([res.statusText]);
+    return dispatch(sessionActions.signup({ email, username, password, name }))
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twice
+          data = await res.clone().json();
+        } catch {
+          data = await res.text(); // Will hit this case if the server is down
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
 
-        });
-    }
+      });
+  }
+
+  if (sessionUser) { return <Redirect to="/" />; }
+
+
+
 
 
   return (
@@ -72,9 +60,6 @@ function SignupFormPage() {
       <p id='header'>Sign up for free to start listening.</p>
       <form onSubmit={handleSubmit} className="signupItems">
         <p id="signupHeader">Sign up with your email address</p>
-        <ul id="signupError">
-          {errors.map(error => <li key={error}> <i class="fa-solid fa-circle-exclamation"></i> {error}</li>)}
-        </ul>
         <label id="fieldLabel">
           What's your email
           <br />
@@ -87,9 +72,14 @@ function SignupFormPage() {
             placeholder="Enter your email"
           />
         </label>
-        {/* {returnErrors(errors, 'Email').map(error => 
-            <li> error </li>
-          )} */}
+        {emailErrors.length > 0 && 
+            <p>
+              {emailErrors[0]} 
+              <br/>
+              {emailErrors[1]}
+            </p>
+        }
+
         <br />
         <label id="fieldLabel">
           Enter your username
@@ -103,7 +93,12 @@ function SignupFormPage() {
             placeholder="Enter your username"
           />
         </label>
-        {/* {hasUsername(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null} */}
+        {usernameErrors.length > 0 &&
+          <p>
+            {usernameErrors[0]}
+          </p>
+        }
+
         <br />
         <label id="fieldLabel">
           Create a password
@@ -117,8 +112,12 @@ function SignupFormPage() {
             placeholder="Create a password."
           />
         </label>
-        {/* {hasPassword(errors[0]) ? <li key={errors[0]}> <i class="fa-solid fa-circle-exclamation"></i> {errors[0]}</li> : null} */}
-        
+        {passwordErrors.length > 0 &&
+          <p>
+            {passwordErrors[0]}
+          </p>
+        }
+
         <br />
         <label id="fieldLabel">
           What should we call you?
@@ -136,8 +135,8 @@ function SignupFormPage() {
         <button type="submit" id="signup">Sign Up</button>
       </form>
       <span className="loginRedirect">
-        <p className="loginText">Have an account?  </p>
-        <Link to="/login" className="loginLink">  Log In</Link>
+        <p className="loginText">Have an account?</p>
+        <Link to="/login" className="loginLink">Log In</Link>
       </span>
     </div>
   );

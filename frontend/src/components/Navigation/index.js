@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
 function Navigation() {
+  const location = useLocation();
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -12,7 +13,11 @@ function Navigation() {
     sessionLinks = (
       <ProfileButton user={sessionUser} id="dropDown"/>
     );
-  } else {
+  }
+  else if (location.pathname === '/signup' || location.pathname === '/login') {
+    return null;
+  }
+  else {
     sessionLinks = (
       <>
         <div className="topNav">
