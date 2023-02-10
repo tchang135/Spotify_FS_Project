@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_151457) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_09_224547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_151457) do
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "author_id_id", null: false
+    t.string "title", null: false
+    t.boolean "public", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id_id"], name: "index_playlists_on_author_id_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.bigint "album_id"
+    t.bigint "artist_id", null: false
+    t.string "title", null: false
+    t.string "song_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+    t.index ["title"], name: "index_songs_on_title"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "password_digest", null: false
@@ -47,4 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_151457) do
   end
 
   add_foreign_key "albums", "artists"
+  add_foreign_key "playlists", "users", column: "author_id_id"
+  add_foreign_key "songs", "albums"
+  add_foreign_key "songs", "artists"
 end
