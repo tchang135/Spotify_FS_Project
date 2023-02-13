@@ -14,7 +14,7 @@
 
 #signupError {
     font-family: Arial, Helvetica, sans-serif;
-    color: red;
+    color: #d31225;
     margin: auto;
     font-size: 13px;
     margin-bottom: 15px;
@@ -104,4 +104,14 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 5px;
     margin-bottom: 150px;
+}
+
+#errorMessage {
+    color: #d31225;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#doubleError {
+    margin-bottom: 5px;
 }

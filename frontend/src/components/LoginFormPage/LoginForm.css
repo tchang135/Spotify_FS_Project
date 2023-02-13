@@ -28,7 +28,7 @@ img {
 }
 
 #backgroundError {
-    background-color: red;
+    background-color: #E91429;
     height: 50px;
     width: 430px;
     display: flex;

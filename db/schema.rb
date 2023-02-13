@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_224547) do
     t.string "title", null: false
     t.bigint "artist_id", null: false
     t.date "published_date", null: false
-    t.string "album_photo_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
@@ -46,7 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_224547) do
     t.bigint "album_id"
     t.bigint "artist_id", null: false
     t.string "title", null: false
-    t.string "song_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_songs_on_album_id"

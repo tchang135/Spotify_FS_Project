@@ -73,10 +73,10 @@ function SignupFormPage() {
           />
         </label>
         {emailErrors.length > 0 && 
-            <p>
-              {emailErrors[0]} 
+            <p id="errorMessage">
+              <i class="fa-solid fa-circle-exclamation" id="doubleError"></i><span style={{marginLeft: '10px'}}>{emailErrors[0]}</span>
               <br/>
-              {emailErrors[1]}
+              <i class="fa-solid fa-circle-exclamation"></i><span style={{marginLeft: '10px'}}>{emailErrors[1]}</span>
             </p>
         }
 
@@ -94,8 +94,8 @@ function SignupFormPage() {
           />
         </label>
         {usernameErrors.length > 0 &&
-          <p>
-            {usernameErrors[0]}
+          <p id="errorMessage">
+            <i class="fa-solid fa-circle-exclamation"></i><span style={{marginLeft: '10px'}}>{usernameErrors[0]}</span>
           </p>
         }
 
@@ -113,8 +113,8 @@ function SignupFormPage() {
           />
         </label>
         {passwordErrors.length > 0 &&
-          <p>
-            {passwordErrors[0]}
+          <p id="errorMessage">
+            <i class="fa-solid fa-circle-exclamation"></i><span style={{marginLeft: '10px'}}>{passwordErrors[0]}</span>
           </p>
         }
 

@@ -6,7 +6,6 @@
 #  album_id   :bigint
 #  artist_id  :bigint           not null
 #  title      :string           not null
-#  song_url   :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -18,19 +17,20 @@ class Song < ApplicationRecord
         foreign_key: :album_id,
         class_name: :Album
 
-    has_one :artist,
-        through: :album,
-        source: :artist
-    
-    has_many :playlist_songs,
+    belongs_to :artist,
         primary_key: :id,
-        foreign_key: :song_id,
-        class_name: :PlaylistSong,
-        dependent: :destroy
+        foreign_key: :artist_id,
+        class_name: :Artist
+    
+    # has_many :playlist_songs,
+    #     primary_key: :id,
+    #     foreign_key: :song_id,
+    #     class_name: :PlaylistSong,
+    #     dependent: :destroy
 
-    belongs_to :playlists,
-        through: :playlist_songs,
-        source: :playlist
+    # belongs_to :playlists,
+    #     through: :playlist_songs,
+    #     source: :playlist
 
     
 

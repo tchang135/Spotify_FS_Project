@@ -1,0 +1,30 @@
+.sidebar {
+    background-color: black;
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+}
+
+.sideImg {
+    width: 10px;
+    height: 20px;
+    background-color: black;
+    ;
+}
+
+.sidebarLinks {
+    color: white;
+}
+
+.homeButton {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+.homeText {
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}

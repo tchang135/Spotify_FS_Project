@@ -4,6 +4,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import SongsList from './components/SongsList';
+import Sidebar from "./components/Sidebar";
+
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
       <Navigation className="navbar"/>
         <Switch>
           <>
+            <Route exact path='/'>
+              <Sidebar/>
+            </Route>
             <Route path="/login">
               <LoginFormPage />
             </Route>

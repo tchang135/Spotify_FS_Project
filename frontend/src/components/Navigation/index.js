@@ -20,7 +20,7 @@ function Navigation() {
   else {
     sessionLinks = (
       <>
-        <div className="topNav">
+        <div id="formLinks">
           <NavLink to="/signup" id="navSignup">Sign up
           </NavLink> 
           <br/>
@@ -35,10 +35,9 @@ function Navigation() {
   return (
     <ul>
       <li>
-        <NavLink exact to="/">
-          <i class="fa-solid fa-house"></i>
-        </NavLink>
-        {sessionLinks}
+        <div className="topNav">
+          {sessionLinks}
+        </div>
       </li>
     </ul>
   );
