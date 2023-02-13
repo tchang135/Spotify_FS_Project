@@ -20,11 +20,11 @@ function AlbumIndex() {
     return (
         <div className="albumIndex">
             <h1 id="indexAlbumText">Albums</h1>
-                <div className="album-list">
+                <div className="albumList">
                 <>
                     {albums.map((album) => (
                     <AlbumItem
-                    id="albumListing"
+                    id="albumListItem"
                     key={album.id}
                     album={album}/>
                     ))}

@@ -12,10 +12,10 @@ function App() {
   return (
     <>
       <Navigation className="navbar"/>
+      <Sidebar/>
         <Switch>
           <>
             <Route exact path='/'>
-              <Sidebar/>
               <AlbumIndex/>
             </Route>
             <Route path="/login">

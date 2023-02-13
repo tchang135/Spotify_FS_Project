@@ -11,7 +11,7 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} id="dropDown"/>
+      <ProfileButton user={sessionUser} />
     );
   }
   else if (location.pathname === '/signup' || location.pathname === '/login') {
@@ -36,7 +36,10 @@ function Navigation() {
     <ul>
       <li>
         <div className="topNav">
+          <div >
           {sessionLinks}
+          </div>
+          
         </div>
       </li>
     </ul>

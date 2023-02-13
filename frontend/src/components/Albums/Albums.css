@@ -1,13 +1,31 @@
 .albumIndex {
     display: block;
-    margin: auto;
-    background-color: white;
+    margin-top: 100px;
+    margin-left: 300px;
+    background-color: #121212;
+    position: absolute;
+    width: fit-content;
 }
 
 #indexAlbumText {
     color: white;
+    margin-bottom: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-#albumListing {
-    color: black;
+.albumList{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.albumTitle {
+    margin-right: 50px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
