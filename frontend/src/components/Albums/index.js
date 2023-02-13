@@ -13,13 +13,18 @@ function AlbumIndex() {
         dispatch(fetchAlbums())
     }, [dispatch]);
 
+    if (albums.length === 0) {
+        return null
+    } 
+
     return (
         <div className="albumIndex">
-            <h1>Albums</h1>
+            <h1 id="indexAlbumText">Albums</h1>
                 <div className="album-list">
                 <>
                     {albums.map((album) => (
                     <AlbumItem
+                    id="albumListing"
                     key={album.id}
                     album={album}/>
                     ))}
@@ -27,7 +32,7 @@ function AlbumIndex() {
                 </div>
         </div>
     )
-
+    
 };
 
 

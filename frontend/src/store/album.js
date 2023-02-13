@@ -20,7 +20,7 @@ export const getAlbum = (albumId) => (state) => state.albums ? state.albums[albu
 export const fetchAlbums = () => async dispatch => {
     const response = await fetch(`/api/albums`);
     const data = await response.json();
-    return dispatch(receiveAlbums(data));
+    return dispatch(receiveAlbums(data.albums));
 }
 
 export const fetchAlbum = (albumId) => async dispatch => {

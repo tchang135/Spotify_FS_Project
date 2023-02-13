@@ -62,3 +62,5 @@ song34 = Song.create!(album_id: 11, artist_id: 4, title: "Always")
 song35 = Song.create!(album_id: 11, artist_id: 4, title: "Pluto Projector")
 song36 = Song.create!(album_id: 11, artist_id: 4, title: "Face to Face")
 song37= Song.create!(artist_id: 2, title: "It Will Rain")
+
+user1 = User.create!(username: "guest", email: "guest@guest.com", password: "password", name: "demo-man")

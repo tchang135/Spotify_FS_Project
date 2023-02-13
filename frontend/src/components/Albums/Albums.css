@@ -1,0 +1,13 @@
+.albumIndex {
+    display: block;
+    margin: auto;
+    background-color: white;
+}
+
+#indexAlbumText {
+    color: white;
+}
+
+#albumListing {
+    color: black;
+}

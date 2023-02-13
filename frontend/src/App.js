@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
-import SongsList from './components/SongsList';
+// import SongsList from './components/SongsList';
 import Sidebar from "./components/Sidebar";
 import AlbumIndex from "./components/Albums";
 
@@ -25,9 +25,9 @@ function App() {
             <Route path="/signup">
               <SignupFormPage />
             </Route>
-            <Route path="/songs">
-              <SongsList />
-            </Route>
+            {/* <Route path="/songs">
+              {/* <SongsList /> */}
+            {/* </Route>  */}
           </>
         </Switch>
     </>
