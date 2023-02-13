@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import SongsList from './components/SongsList';
 import Sidebar from "./components/Sidebar";
+import AlbumIndex from "./components/Albums";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <>
             <Route exact path='/'>
               <Sidebar/>
+              <AlbumIndex/>
             </Route>
             <Route path="/login">
               <LoginFormPage />

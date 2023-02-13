@@ -10,7 +10,7 @@
 #  updated_at     :datetime         not null
 #
 class Album < ApplicationRecord
-    validates :title, :artist_id, :published_date, :albumn_photo_url, presence: true
+    validates :title, :artist_id, :published_date, presence: true
 
     belongs_to :artist,
         foreign_key: :artist_id

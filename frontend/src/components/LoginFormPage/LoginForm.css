@@ -1,7 +1,8 @@
 .loginPage {
     height: 100%;
-    width: 100%;
+    width: auto;
     background-color: white;
+    padding-top: 10px;
 }
 
 img {
