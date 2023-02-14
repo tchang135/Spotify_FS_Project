@@ -7,20 +7,9 @@ json.albums do
         :artist_id, 
         :published_date 
     end
+    json.set! 'artist' do
+        json.extract! album.artist, :id, :name
+     end
   end
 end
 
-@albums.songs.includes(:artist).each do |song|
-    json.songs do
-      json.set! song.id do
-        json.partial! 'api/songs/song', song: song
-      end
-    end
-  
-    json.artists do
-      json.set! song.artist_id do
-        json.partial! 'api/artists/artist', user: song.artist
-      end
-    end
-  end
-  

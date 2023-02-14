@@ -5,11 +5,11 @@
     position: absolute;
 }
 
-.sideImg {
-    width: 10px;
-    height: 20px;
-    background-color: black;
-    ;
+#invertImg {
+    width: 160px;
+    height: 55px;
+    margin-top: 25px;
+    margin-right: 70px;
 }
 
 .sidebarLinks {
@@ -19,12 +19,17 @@
 .homeButton {
     display: flex;
     margin-left: 30px;
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 15px;
+    align-items: center;
+}
+
+#homeImage {
+    font-size: 20px;
 }
 
 .homeText {
-    margin-left: 10px;
+    margin-left: 18px;
     font-family: Arial, Helvetica, sans-serif;
     
 }

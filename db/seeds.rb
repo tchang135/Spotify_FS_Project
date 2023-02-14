@@ -25,6 +25,12 @@ album10 = Album.create!(title: "Apricot Princess", artist_id: 4, published_date:
 album11 = Album.create!(title: "Pony", artist_id: 4, published_date: '20150315')
 album12 = Album.create!(title: "Who Cares?", artist_id: 4, published_date: '20150315')
 
+
+album1.photo.attach (
+    io: URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/24k_magic.png")
+    filename: "24k_magic.png"
+)
+
 song1 = Song.create!(album_id: 1, artist_id: 1, title: "Fair Trade")
 song2 = Song.create!(album_id: 1, artist_id: 1, title: "Knife Talk")
 song3 = Song.create!(album_id: 1, artist_id: 1, title: "No Friends in the Industry")
@@ -61,6 +67,5 @@ song33 = Song.create!(album_id: 10, artist_id: 4, title: "Happiness")
 song34 = Song.create!(album_id: 11, artist_id: 4, title: "Always")
 song35 = Song.create!(album_id: 11, artist_id: 4, title: "Pluto Projector")
 song36 = Song.create!(album_id: 11, artist_id: 4, title: "Face to Face")
-song37= Song.create!(artist_id: 2, title: "It Will Rain")
 
 user1 = User.create!(username: "guest", email: "guest@guest.com", password: "password", name: "demo-man")

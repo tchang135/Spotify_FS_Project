@@ -10,7 +10,6 @@ class ApplicationController < ActionController::API
     end
 
     def require_logged_in
-        debugger
         unless current_user
             render json: { message: 'Unauthorized' }, status: :unauthorized 
         end

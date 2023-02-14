@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import AlbumItem from "./AlbumItem";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlbums } from "../../store/album";
-import './Albums.css'
+import './AlbumIndex.css'
 
 function AlbumIndex() {
     const dispatch = useDispatch();

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 
 function AlbumItem( { album } ) {
-    const { title, artistId } = album;
+    const { title } = album;
     const history = useHistory(); 
 
     // const [artist, setArtist] = useState("");
