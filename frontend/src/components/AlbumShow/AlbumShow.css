@@ -9,4 +9,14 @@
 
 .albumSongs {
     color: black;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+
+}
+
+.song {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
