@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,6 +12,8 @@ artist1 = Artist.create!(name: "Drake", description: "I'm a certified lover boy"
 artist2 = Artist.create!(name: "Bruno Mars", description: "Synonymous with smooth or butter")
 artist3 = Artist.create!(name: "Kendrick Lamar", description: "Kendrick Lamar Duckworth is an American rapper and songwriter. Known for his progressive musical styles and socially conscious songwriting, he is often considered one of the most influential hip hop artists of his generation.")
 artist4 = Artist.create!(name: "Rex Orange County", description: "Alexander James O'Connor, known professionally as Rex Orange County, is an English singer, multi-instrumentalist and songwriter. O'Connor rose to prominence in 2017 following multiple features on Tyler, the Creator's Grammy-nominated album Flower Boy, including the single 'Boredom'.")
+
+
 
 album1 = Album.create!(title: "Certified Lover Boy", artist_id: 1, published_date: '20210903')
 album2 = Album.create!(title: "Scorpion", artist_id: 1, published_date: '20180629')
@@ -26,10 +29,57 @@ album11 = Album.create!(title: "Pony", artist_id: 4, published_date: '20150315')
 album12 = Album.create!(title: "Who Cares?", artist_id: 4, published_date: '20150315')
 
 
-album1.photo.attach (
+
+album1.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/certified_lover_boy.jpeg")
+    filename: "certified_lover_boy.jpeg"
+)
+album2.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/scorpion.jpeg")
+    filename: "scorpion.jpeg"
+)
+album3.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/views.jpeg")
+    filename: "views.jpeg"
+)
+album4.photo.attach (
     io: URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/24k_magic.png")
     filename: "24k_magic.png"
 )
+album5.photo.attach (
+    io: URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/an_evening_with.png")
+    filename: "an_evening_with.png"
+)
+album6.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/doo_wops.png")
+    filename: "doo_wops.png"
+)
+album7.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/DAMN.png")
+    filename: "DAMN.png"
+)
+album8.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/good_kid.jpeg")
+    filename: "good_kid.jpeg"
+)
+album9.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/pimp_butterfly.webp")
+    filename: "pimp_butterfly.webp"
+)
+album10.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/apricot_princess.jpeg")
+    filename: "apricot_princess.jpeg"
+)
+album11.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/pony.png")
+    filename: "pony.png"
+)
+album12.photo.attach(
+    io:URI.open("https://symphonifyphotos.s3.amazonaws.com/photos/who_cares%3F.png")
+    filename: "who_cares%3F.png"
+)
+
+
 
 song1 = Song.create!(album_id: 1, artist_id: 1, title: "Fair Trade")
 song2 = Song.create!(album_id: 1, artist_id: 1, title: "Knife Talk")
@@ -67,5 +117,7 @@ song33 = Song.create!(album_id: 10, artist_id: 4, title: "Happiness")
 song34 = Song.create!(album_id: 11, artist_id: 4, title: "Always")
 song35 = Song.create!(album_id: 11, artist_id: 4, title: "Pluto Projector")
 song36 = Song.create!(album_id: 11, artist_id: 4, title: "Face to Face")
+
+
 
 user1 = User.create!(username: "guest", email: "guest@guest.com", password: "password", name: "demo-man")

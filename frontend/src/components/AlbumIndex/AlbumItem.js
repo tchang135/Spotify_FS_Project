@@ -13,7 +13,7 @@ function AlbumItem( { album } ) {
 
     return (
         <div onClick={(e) => history.push(`/albums/${album.id}`)}>
-            <div className="">
+            <div className="albumItem">
                 <p className="albumTitle">{title}</p>
                 {/* <p className="artistName">{artist}</p> */}
             </div>

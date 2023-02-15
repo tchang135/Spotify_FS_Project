@@ -26,7 +26,9 @@ function AlbumIndex() {
                     <AlbumItem
                     id="albumListItem"
                     key={album.id}
-                    album={album}/>
+                    album={album}
+                     />
+                    
                     ))}
                 </>
                 </div>

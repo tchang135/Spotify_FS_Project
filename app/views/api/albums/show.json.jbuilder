@@ -1,4 +1,4 @@
-json.albums do
+json.album do
   json.extract! @album, 
     :id, 
     :title,
@@ -6,16 +6,20 @@ json.albums do
     :published_date
 end
 
-@album.songs.includes(:artist).each do |song|
   json.songs do
-    json.set! song.id do
-      json.partial! 'api/songs/song', song: song
+    @album.songs.includes(:artist).each do |song|
+      json.set! song.id do
+        json.partial! 'api/songs/song', song: song
+      end
     end
   end
 
   json.artists do
-    json.set! song.artist_id do
-      json.partial! 'api/artists/artist', artist: song.artist
+    @album.songs.includes(:artist).map(&:artist).uniq.each do |artist|
+      json.set! artist.id do
+        json.partial! 'api/artists/artist', artist: artist
+      end
     end
   end
-end 
+
+

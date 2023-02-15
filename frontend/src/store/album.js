@@ -6,9 +6,9 @@ export const receiveAlbums = (albums) => ({
     albums
 })
 
-export const receiveAlbum = (album) => ({
+export const receiveAlbum = (payload) => ({
     type: RECEIVE_ALBUM,
-    album
+    payload
 })
 
 //selectors
@@ -38,7 +38,7 @@ const albumsReducer = (state = {}, action) => {
         case RECEIVE_ALBUMS:
             return { ...nextState, ...action.albums };
         case RECEIVE_ALBUM:
-            nextState[action.album.id] = action.album;
+            nextState[action.payload.album.id] = action.payload.album;
             return nextState;
         default:
             return state;
