@@ -1,0 +1,15 @@
+.songList {
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    background-color: orange;
+}
+
+#songItem {
+    display: flex;
+    color: black;
+}
+
+/* #songColumn {
+    margin-left: 200px;
+} */

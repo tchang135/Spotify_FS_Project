@@ -6,11 +6,12 @@
 #  album_id   :bigint
 #  artist_id  :bigint           not null
 #  title      :string           not null
+#  url        :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Song < ApplicationRecord
-    validates :title, :artist_id, presence: true
+    validates :title, :artist_id, :url, presence: true
 
     belongs_to :album,
         primary_key: :id,

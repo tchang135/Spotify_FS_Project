@@ -6,6 +6,7 @@ json.albums do
         :title,
         :artist_id, 
         :published_date
+        :photo_url
         # json.photoUrl album.photo.attached? ? url_for(album.photo) : nil
     end
     json.set! 'artist' do

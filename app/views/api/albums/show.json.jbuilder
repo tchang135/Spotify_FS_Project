@@ -4,6 +4,7 @@ json.album do
     :title,
     :artist_id, 
     :published_date
+    :photo_url
 end
 
   json.songs do

@@ -3,10 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
-// import SongsList from './components/SongsList';
 import Sidebar from "./components/Sidebar";
 import AlbumIndex from "./components/AlbumIndex";
 import AlbumShowPage from "./components/AlbumShow";
+import SongList from "./components/SongsList";
 
 
 function App() {
@@ -18,9 +18,11 @@ function App() {
           <>
             <Route exact path='/'>
               <AlbumIndex/>
+              <SongList/>
             </Route>
             <Route path="/albums/:albumId">
-                <AlbumShowPage/>
+              <AlbumShowPage/>
+              <SongList/>
             </Route>
             <Route path="/login">
               <LoginFormPage />
@@ -29,9 +31,6 @@ function App() {
             <Route path="/signup">
               <SignupFormPage />
             </Route>
-            {/* <Route path="/songs">
-              {/* <SongsList /> */}
-            {/* </Route>  */}
           </>
         </Switch>
     </>

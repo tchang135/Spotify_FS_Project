@@ -21,17 +21,7 @@ function AlbumShowPage() {
         }
         return null
       })
-    const songs = useSelector(state => {
-        const final = [];
-        const songsArr = Object.values(state.songs)
-        for (let i = 0; i < songsArr.length; i++) {
-          const currentSong = songsArr[i]
-          if (currentSong.albumId === album.id) {
-            final.push(currentSong)
-          }
-        }
-        return final
-      })
+
 
     useEffect(() => {
         dispatch(fetchAlbum(albumId))
@@ -54,19 +44,7 @@ function AlbumShowPage() {
                 </div>
 
             </div>
-            <div className='albumSongs'>
-                <ul className='songList'>
-                    {songs.map((song) => {
-                        return (
-                    <li className="song" key={song.id}>    
-                        <p id="songTitle"> {song.title} </p>
-                        <p id="artistName"> {artist.name} </p>
-                        <p id="songLength"> Length </p>
-                    </li>  
-                        )
-                    })}
-                </ul>
-            </div> 
+            
         </div>
     )
 };

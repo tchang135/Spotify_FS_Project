@@ -6,6 +6,7 @@
 #  title          :string           not null
 #  artist_id      :bigint           not null
 #  published_date :date             not null
+#  photo_url      :string           not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
