@@ -7,7 +7,7 @@ const MediaBar = () => {
 
     const dispatch = useDispatch();
     const currentSong = useSelector((state) => state.currentSong)
-    // const currentSongId = useSelector((state) => state.id[currentSongId])
+    // const currentSong = useSelector((state) => state.id[currentSongId])
     const currentAlbumSongs = useSelector(({ currentAlbum }) => {
         return currentAlbum.id ? Object.values(currentAlbum.songs) : []
     });

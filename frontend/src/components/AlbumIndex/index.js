@@ -7,7 +7,7 @@ import './AlbumIndex.css'
 function AlbumIndex() {
     const dispatch = useDispatch();
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
-
+    // const artists = useSelector(state => state.artist ? Object.values(state.artist) : [] )
     
     useEffect(() => {
         dispatch(fetchAlbums())
@@ -16,6 +16,7 @@ function AlbumIndex() {
     if (albums.length === 0) {
         return null
     } 
+
 
     return (
         <div className="albumIndex">
@@ -27,9 +28,10 @@ function AlbumIndex() {
                     id="albumListItem"
                     key={album.id}
                     album={album}
+                    // artist={artists[album.id]}
                      />
-                    
                     ))}
+                    {/* <p className="albumPhoto">{artists.photo_url}</p> */}
                 </>
                 </div>
         </div>

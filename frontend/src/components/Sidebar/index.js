@@ -21,6 +21,10 @@ const Sidebar = () => {
                         <i id="homeImage" class="fa-solid fa-house"></i>
                         <p className="homeText">Home</p>
                     </div>
+                    <div className="searchButton">
+                        <i id="searchImage" class="fa-solid fa-magnifying-glass"></i>
+                        <p className="searchText">Search</p>
+                    </div>
                 </div>
             </nav>
         )
