@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentSong } from '../../store/currentSong';
 import { useParams } from 'react-router-dom';
-import MediaBar from '../MediaBar/MediaBar';
 import './SongsList.css'
 
 const SongList = () => {
     const { albumId } = useParams();
-
     const album = useSelector(state => {
         return state.albums[albumId]
     });
@@ -15,7 +14,7 @@ const SongList = () => {
         const artistArr = Object.values(state.artist)
         for (let i = 0; i < artistArr.length; i++) {
           const currentArtist = artistArr[i]
-          if (currentArtist.id === album.artistId) {
+          if (album && currentArtist.id === album.artistId) {
             return currentArtist
           }
         }
@@ -27,18 +26,22 @@ const SongList = () => {
         const songsArr = Object.values(state.songs)
         for (let i = 0; i < songsArr.length; i++) {
           const currentSong = songsArr[i]
-          if (currentSong.albumId === album.id) {
+          if (album && currentSong.albumId === album.id) {
             final.push(currentSong)
           }
         }
         return final
       });
 
-    const [selectedSongUrl, setSelectedSongUrl] = useState(null);
+    const dispatch = useDispatch(); 
 
-    const handleSongClick = (songUrl) => {
-      setSelectedSongUrl(songUrl);
-    };
+    const handleSongClick = (songId) => {
+    dispatch(setCurrentSong(songId));
+  };
+
+    if (!songs || !artist) {
+        return null
+    }
   
     return (
       <div className="songList">
@@ -48,11 +51,6 @@ const SongList = () => {
             <p id="songColumn">{artist.name}</p>
           </div>
         ))}
-        {/* {selectedSongUrl && (
-          <MediaBar
-            songUrl={selectedSongUrl}
-          />
-        )} */}
       </div>
     );
   };

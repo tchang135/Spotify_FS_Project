@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 import AlbumIndex from "./components/AlbumIndex";
 import AlbumShowPage from "./components/AlbumShow";
 import SongList from "./components/SongsList";
+import MediaBar from "./components/MediaBar/MediaBar";
 
 
 function App() {
@@ -19,10 +20,12 @@ function App() {
             <Route exact path='/'>
               <AlbumIndex/>
               <SongList/>
+              <MediaBar/>
             </Route>
             <Route path="/albums/:albumId">
               <AlbumShowPage/>
               <SongList/>
+              <MediaBar/>
             </Route>
             <Route path="/login">
               <LoginFormPage />

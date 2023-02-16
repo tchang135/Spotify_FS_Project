@@ -28,9 +28,11 @@ function AlbumShowPage() {
     }, [dispatch]);
    
 
-    if (!album) {
+    if (!album || !artist) {
         return null
     } 
+
+
     
 
     return (
@@ -39,6 +41,7 @@ function AlbumShowPage() {
                 <div className='album'>
                     <p className='albumTitle'>{album.title}</p>
                     <p className='publishedYear'>{album.publishedDate}</p>
+                    <img src={album.photoUrl} alt=""/>
                     <p className='artistName'>{artist.name}</p> 
                     <p class="artistDescription">{artist.description}</p>
                 </div>

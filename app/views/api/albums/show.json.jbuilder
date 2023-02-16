@@ -3,7 +3,7 @@ json.album do
     :id, 
     :title,
     :artist_id, 
-    :published_date
+    :published_date,
     :photo_url
 end
 
