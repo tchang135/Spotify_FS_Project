@@ -48,9 +48,9 @@ function LoginFormPage() {
         <ul id='loginError'>
           {errors.map(error => <li key={error} id="backgroundError"><i class="fa-solid fa-circle-exclamation"></i><span style={{marginLeft: '10px'}}>{error}</span></li>)}
         </ul>
-        <button id="facebook">LINKEDIN</button>
+        <input id="facebook" onClick="window.location.href='https://www.linkedin.com/in/timothy-s-chang/';" value="LINKEDIN"/>
         <br/>
-        <button id="apple">GITHUB</button>
+        <input id="apple" onClick="window.location.href='https://github.com/tchang135';" value="GITHUB"/>
         <br/>
       </div>
       <br/>

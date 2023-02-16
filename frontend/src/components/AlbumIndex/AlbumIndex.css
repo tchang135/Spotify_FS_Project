@@ -5,6 +5,7 @@
     background-color: #121212;
     position: absolute;
     width: fit-content;
+    height: fit-content;
 }
 
 #indexAlbumText {
@@ -13,22 +14,38 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
+    height: fit-content;
 }
 
 .albumList{
     color: white;
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
 }
 
 .albumTitle {
     margin-right: 50px;
-    margin-left: 30px;
     margin-bottom: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    height: fit-content;
+}
+
+.albumItem {
+    display: grid;
+    align-items: center;
+    margin-right: 50px;
+    height: fit-content;
 }
 
 .albumItem:hover {
     background-color: rgb(55, 54, 54);
+    height: fit-content;
+}
+
+#albumPhoto {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
 }

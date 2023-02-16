@@ -1,5 +1,5 @@
 .topNav {
-    position: absolute;
+    position: fixed;
     padding-top: 40px;
     width: 100%;
     background-color: rgb(10, 9, 9);
@@ -15,7 +15,7 @@
 
 #navSignup {
     color: grey;
-    position: absolute;
+    position: fixed;
     right: 190px;
     top: 20px;
     text-decoration: none;
@@ -24,7 +24,7 @@
 #navLogin {
     color: black;
     display: flex;
-    position: absolute;
+    position: fixed;
     right: 60px;
     top: 7px;
     text-decoration: none;
@@ -41,7 +41,7 @@
 }
 
 .profileSection {
-    position: absolute;
+    position: fixed;
     right: 30px;
     top: 10px;
     background-color: #121212;

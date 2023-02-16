@@ -9,11 +9,12 @@ function AlbumIndex() {
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
     // const artists = useSelector(state => state.artist ? Object.values(state.artist) : [] )
     
+
     useEffect(() => {
         dispatch(fetchAlbums())
     }, [dispatch]);
 
-    if (albums.length === 0) {
+    if (albums.length === 0 ) {
         return null
     } 
 
@@ -25,10 +26,9 @@ function AlbumIndex() {
                 <>
                     {albums.map((album) => (
                     <AlbumItem
-                    id="albumListItem"
                     key={album.id}
                     album={album}
-                    // artist={artists[album.id]}
+                    // artist={artist}
                      />
                     ))}
                     {/* <p className="albumPhoto">{artists.photo_url}</p> */}

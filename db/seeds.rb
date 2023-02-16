@@ -120,4 +120,4 @@ song36 = Song.create!(album_id: 11, artist_id: 4, title: "Face to Face", url:'ht
 
 
 
-user1 = User.create!(username: "guest", email: "guest@guest.com", password: "password", name: "demo-man")
+user1 = User.create!(username: "guest1", email: "guest@guest.com", password: "password", name: "demo-man")

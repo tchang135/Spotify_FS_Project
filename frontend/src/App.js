@@ -15,17 +15,16 @@ function App() {
     <>
       <Navigation className="navbar"/>
       <Sidebar/>
+      <MediaBar/>
         <Switch>
           <>
             <Route exact path='/'>
               <AlbumIndex/>
-              <SongList/>
-              <MediaBar/>
+              <SongList/>     
             </Route>
             <Route path="/albums/:albumId">
               <AlbumShowPage/>
               <SongList/>
-              <MediaBar/>
             </Route>
             <Route path="/login">
               <LoginFormPage />
