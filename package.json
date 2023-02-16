@@ -21,5 +21,8 @@
   "homepage": "https://github.com/tchang135/Symphonify_FS_Project#readme",
   "engines": {
     "node": "16.x"
+  },
+  "dependencies": {
+    "react-h5-audio-player": "^3.8.6"
   }
 }
