@@ -3,7 +3,7 @@
     padding-top: 40px;
     width: 100%;
     background-color: #090909;
-    color: white;
+    color: rgb(156, 154, 154);
     z-index: 8;
     
 }
@@ -16,15 +16,24 @@
 }
 
 #githubNav {
-    color: white;
+    /* color: white; */
+    font-size: 25px;
+    margin-right: 20px;
+    color: rgb(156, 154, 154)
+}
+
+#githubNav:hover {
+  color: white;
+}
+
+#linkedinNav {
+    color: rgb(156, 154, 154);
     font-size: 25px;
     margin-right: 20px;
 }
 
-#linkedinNav {
-    color: white;
-    font-size: 25px;
-    margin-right: 20px;
+#linkedinNav:hover {
+  color: white;
 }
 
 
@@ -69,10 +78,14 @@
     justify-content: center;
     background-color: transparent;
     border: none;
-    color: white;
+    color: rgb(156, 154, 154);
     font-size: 25px;
     cursor: pointer;
     outline: none;
+  }
+
+  .profileButton:hover {
+    color: white;
   }
   
   .dropdown {

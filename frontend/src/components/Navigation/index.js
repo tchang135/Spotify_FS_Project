@@ -13,12 +13,12 @@ function Navigation() {
     sessionLinks = (
       <>
         <div className="loggedInNav">
-        <a href="https://www.linkedin.com/in/timothy-s-chang/" id="linkedinNav">
-          <i class="fa-brands fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/timothy-s-chang/">
+          <i class="fa-brands fa-linkedin" id="linkedinNav"></i>
         </a>
       <br/>
-        <a href="https://github.com/tchang135" id="githubNav">
-          <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/tchang135" >
+          <i class="fa-brands fa-github" id="githubNav"></i>
         </a>
       <br/>
         <ProfileButton user={sessionUser} />
