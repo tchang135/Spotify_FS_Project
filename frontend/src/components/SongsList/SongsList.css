@@ -12,7 +12,7 @@
     position: absolute;
     top: 520px;
     left: 300px;
-    width: 80%;
+    width: 87%;
     display: inline-block; /* added this rule to make the pseudo-element work properly */
     padding-bottom: 10px; /* added this rule to make some space for the line */
 }
@@ -22,7 +22,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 80%;
+    width: 87%;
     height: 1px;
     background-color: rgba(72, 72, 72, 0.529); /* change this to the color you want */
 }
@@ -36,13 +36,13 @@
     top: 560px;
     left: 300px;
     height: 100%;
-    width: 80%;
+    width: 87%;
   }
   
   #songItem {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 87%;
     color: white;
     padding-top: 8px;
   }

@@ -1,8 +1,9 @@
 
 #body {
     height: 100%;
-    max-width: 100%;
+    max-width: 100vw;
     background-color: #141414;
+    overflow-x: hidden;
 }
 
 html {

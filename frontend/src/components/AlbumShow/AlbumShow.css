@@ -1,10 +1,10 @@
 .albumShow {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 250px;
     background-image: linear-gradient(rgba(164, 94, 94, 0.5),rgba(102, 44, 44, 0.5), rgba(40, 14, 14, 0.5));
     height: 45%;
-    width: 100%;
+    width: 95%;
 }
 
 .albumShowPhoto {
@@ -13,6 +13,7 @@
     left: 30px;
     height: 240px;
     width: 240px;
+    box-sizing: border-box;
 }
 
 .albumArtistInfo {
@@ -33,7 +34,7 @@
     position: absolute;
     top: 160px;
     left: 290px;
-    font-size: 72px;
+    font-size: 68px;
     font-weight: bold;
     color: white;
 }

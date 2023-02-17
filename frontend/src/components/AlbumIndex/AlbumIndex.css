@@ -60,4 +60,5 @@
     width: 200px;
     height: 200px;
     margin-bottom: 30px;
+    box-sizing: border-box;
 }
