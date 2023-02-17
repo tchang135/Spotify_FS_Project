@@ -1,15 +1,65 @@
-.songList {
+.bigPlayButton {
     position: absolute;
-    top: 400px;
+    top: 420px;
+    left: 280px;
+    color: #1ed760;
+    font-size: 70px;
+}
+
+.titleHeader {
+    color: rgb(171, 169, 169);
+    font-size: 12px;
+    position: absolute;
+    top: 520px;
     left: 300px;
-    background-color: orange;
+    width: 80%;
+    display: inline-block; /* added this rule to make the pseudo-element work properly */
+    padding-bottom: 10px; /* added this rule to make some space for the line */
 }
 
-#songItem {
+.titleHeader::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 1px;
+    background-color: rgba(72, 72, 72, 0.529); /* change this to the color you want */
+}
+
+
+
+.songList {
     display: flex;
-    color: black;
-}
+    flex-direction: column;
+    position: absolute;
+    top: 560px;
+    left: 300px;
+    height: 100%;
+    width: 80%;
+  }
+  
+  #songItem {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    color: white;
+    padding-top: 8px;
+  }
 
-/* #songColumn {
-    margin-left: 200px;
-} */
+  #songItem:hover {
+    cursor: pointer;
+    background-color: rgba(123, 123, 123, 0.425);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  
+  #albumShowSongTitle {
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+  #albumShowArtistName {
+    margin-bottom: 15px;
+    padding-left: 10px;
+  }

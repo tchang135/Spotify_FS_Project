@@ -21,7 +21,6 @@ img {
 }
 
 #loginError {
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 15px;
     margin-top: 30px;
@@ -53,7 +52,6 @@ img {
 
 #loginText {
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     display: flex;
     justify-content: center;
@@ -62,38 +60,52 @@ img {
     margin-bottom: 15px;
 }
 
-#facebook {
+#linkedin {
     background-color: #1877f2;
     color: white;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
     border-color: grey; 
-    font-family: Arial, Helvetica, sans-serif;
     height: 50px;
     margin-top: 0px;
-    display: block;
+    display: flex;
     margin-left: auto; 
     margin-right: auto;
     margin-bottom: -18px;
     width: 450px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
-#apple {
+#linkedin:hover {
+    cursor: pointer;
+    background-color: #3d8cf4;
+}
+
+#github {
     background-color: black;
     color: white;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
     border-color: grey; 
-    font-family: Arial, Helvetica, sans-serif;
     height: 50px;
     margin-top: 10px;
-    display: block;
+    display: flex;
     margin-left: auto; 
     margin-right: auto;
     margin-bottom: -18px;
     width: 450px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#github:hover {
+    cursor: pointer;
+    background-color: rgb(37, 37, 37);
 }
 
 .loginForm {
@@ -102,7 +114,6 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin-top: 30px;
 }
@@ -136,7 +147,6 @@ img {
 
 #demoButton {
     background-color: #1ed760;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
@@ -147,9 +157,14 @@ img {
     margin-bottom: 20px; 
 }
 
+#demoButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: #15ee61;
+}
+
 #submitButton {
     background-color: #1ed760;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
@@ -161,10 +176,15 @@ img {
     margin-bottom: 20px; 
 }
 
+#submitButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: #15ee61;
+}
+
 #signupText {
     font-weight: bold;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .signupLink {
@@ -193,7 +213,12 @@ img {
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
     width: 350px;
     padding-top: 13px;
+}
+
+#linkButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: #15ee61;
 }

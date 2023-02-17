@@ -2,9 +2,29 @@
     position: fixed;
     padding-top: 40px;
     width: 100%;
-    background-color: rgb(10, 9, 9);
+    background-color: #090909;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    z-index: 8;
+    
+}
+
+.loggedInNav {
+    display: flex;
+    position: fixed;
+    right: 100px;
+    top: 8px;
+}
+
+#githubNav {
+    color: white;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+#linkedinNav {
+    color: white;
+    font-size: 25px;
+    margin-right: 20px;
 }
 
 
@@ -29,34 +49,63 @@
     top: 7px;
     text-decoration: none;
     background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 40px;
     border: none;  
     height: 40px;
-    width: 110px;
+    width: 100px;
     justify-content: center;
     align-items: center;
 }
 
 .profileSection {
-    position: fixed;
-    right: 30px;
-    top: 10px;
-    background-color: #121212;
+    position: relative;
+  }
+  
+  .profileButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
     color: white;
-}
+    font-size: 25px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    padding: 8px;
+    background-color: #282828;
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    text-align: right;
+  }
+  
+  .dropdown li {
+    margin: 8px 0;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
 
-.profileButton {
-    /* position: absolute;
-    right: 20px;
-    top: 20px; */
-    background-color: #121212;
+  }
+  
+  .dropdown button {
+    background-color: transparent;
+    border: none;
     color: white;
-}
-
-.dropdown {
-    color: white;
-    background-color: white;
-}
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+  }

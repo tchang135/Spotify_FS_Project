@@ -42,16 +42,24 @@ const SongList = () => {
     if (!songs || !artist) {
         return null
     }
+
   
     return (
+      <>
+      <div className="bigPlayButton"key={songs[0].url} onClick={() => handleSongClick(songs[0].url)}>
+        <i class="fa-solid fa-circle-play"></i>
+      </div>
+      <h1 className="titleHeader">TITLE</h1>
+    
       <div className="songList">
         {songs.map((song) => (
           <div id="songItem" key={song.url} onClick={() => handleSongClick(song.url)}>
-            <p id="songColumn">{song.title}</p>   
-            <p id="songColumn">{artist.name}</p>
+            <p id="albumShowSongTitle">{song.title}</p>   
+            <p id="albumShowArtistName">{artist.name}</p>
           </div>
         ))}
       </div>
+      </>
     );
   };
   

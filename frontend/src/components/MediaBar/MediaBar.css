@@ -5,3 +5,79 @@
     background-color: #111111;
     z-index: 10;
 }
+
+.rhap_progress-section {
+    /* background-color: #1ed760; */
+    margin-left: 31%;
+    margin-right: 31%;
+}
+    
+.rhap_progress-container:hover .rhap_progress-filled {
+    background-color: #1ed760;
+}
+  
+.rhap_progress-container:hover .rhap_progress-indicator {
+    visibility: visible;
+}
+
+.rhap_download-progress {
+    background-color: #505050;
+    height: 4px;
+}
+  
+.rhap_progress-filled {
+    background-color: white;
+    height: 4px;
+}
+  
+.rhap_progress-bar-show-download {
+    background-color: #505050;
+    height: 4px;
+}
+
+.rhap_play-pause-button {
+    color: white;
+    height: 37px;
+    width: 37px;
+    font-size: 37px;
+    /* font-weight: bold; */
+  
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.rhap_progress-indicator {
+    visibility: hidden;
+    background-color: white;
+    height: 12px;
+    width: 12px;
+    margin-top: 4px;
+}
+
+button[aria-label="Previous"]:hover {
+    color: white;
+}
+  
+button[aria-label="Skip"]:hover {
+    color: white;
+}
+  
+button[aria-label="Forward"]:hover {
+    color: white;
+}
+  
+button[aria-label="Rewind"]:hover {
+    color: white;
+}
+
+.rhap_volume-button:hover {
+    color: white;
+}
+
+.rhap_volume-filled {
+    background-color: white;
+}
+
+.rhap_volume-container:hover .rhap_volume-filled {
+    background-color: #1ed760;
+}

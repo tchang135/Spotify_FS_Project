@@ -40,6 +40,7 @@ function AlbumItem( { album } ) {
                 <p className="albumTitle">{title}</p>
                 <p className="artistName">{artist.name}</p>
             </div>
+            <p className="spacer"></p>
         </div>
     )
     

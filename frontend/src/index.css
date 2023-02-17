@@ -2,8 +2,11 @@
 #body {
     height: 100%;
     max-width: 100%;
-    background-color: #151515;
+    background-color: #141414;
 }
 
+html {
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, sans-serif;
+}
 
 

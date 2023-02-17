@@ -3,6 +3,7 @@
     width: 250px;
     height: 100vh;
     position: fixed;
+    z-index: 9;
 }
 
 #invertImg {
@@ -27,6 +28,7 @@
 
 .homeButton:hover {
     color :white; 
+    cursor: pointer;
 }
 
 #homeImage {
@@ -36,7 +38,6 @@
 
 .homeText {
     margin-left: 18px;
-    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -51,6 +52,7 @@
 
 .searchButton:hover {
     color :white; 
+    cursor: pointer;
 }
 
 #searchImage {
@@ -59,5 +61,4 @@
 
 .searchText {
     margin-left: 18px;
-    font-family: Arial, Helvetica, sans-serif;
 }

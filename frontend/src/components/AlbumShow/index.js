@@ -39,11 +39,15 @@ function AlbumShowPage() {
         <div className='albumShow'>
             <div className='albumDescription'>
                 <div className='album'>
-                    <p className='albumTitle'>{album.title}</p>
-                    <p className='publishedYear'>{album.publishedDate}</p>
-                    <img src={album.photoUrl} alt=""/>
-                    <p className='artistName'>{artist.name}</p> 
-                    <p class="artistDescription">{artist.description}</p>
+                    <img src={album.photoUrl} alt="" className="albumShowPhoto"/>
+                    <div classname="albumArtistInfo">
+                        <p className="albumHeaderTag">ALBUM</p>
+                        <p className='albumShowTitle'>{album.title}</p>
+                        <div className="artistNameAndYear">
+                            <p className='albumShowArtistName'>{artist.name}</p> 
+                            <p className='publishedYear'>{album.publishedDate}</p>     
+                        </div>
+                    </div>
                 </div>
 
             </div>

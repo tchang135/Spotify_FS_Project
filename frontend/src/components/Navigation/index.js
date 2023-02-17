@@ -11,7 +11,19 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <div className="loggedInNav">
+        <a href="https://www.linkedin.com/in/timothy-s-chang/" id="linkedinNav">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      <br/>
+        <a href="https://github.com/tchang135" id="githubNav">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      <br/>
+        <ProfileButton user={sessionUser} />
+        </div>
+      </>
     );
   }
   else if (location.pathname === '/signup' || location.pathname === '/login') {

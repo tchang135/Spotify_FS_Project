@@ -11,8 +11,7 @@
 #indexAlbumText {
     color: white;
     margin-bottom: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     height: fit-content;
 }
@@ -25,11 +24,20 @@
 }
 
 .albumTitle {
-    margin-right: 50px;
-    margin-bottom: 100px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: fit-content;
+    font-weight: bold;
+}
+
+.artistName {
     font-size: 14px;
     height: fit-content;
+    
+}
+
+.spacer {
+    margin-bottom: 100px;
 }
 
 .albumItem {
@@ -37,11 +45,15 @@
     align-items: center;
     margin-right: 50px;
     height: fit-content;
+    width: fit-content;
+    padding: 15px;
 }
 
 .albumItem:hover {
     background-color: rgb(55, 54, 54);
     height: fit-content;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 #albumPhoto {
