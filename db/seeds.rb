@@ -82,8 +82,8 @@ album12 = Album.create!(title: "Who Cares?", artist_id: 4, published_date: '2015
 
 
 song1 = Song.create!(album_id: 1, artist_id: 1, title: "Fair Trade", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
-song2 = Song.create!(album_id: 1, artist_id: 1, title: "Knife Talk", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
-song3 = Song.create!(album_id: 1, artist_id: 1, title: "No Friends in the Industry", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
+song2 = Song.create!(album_id: 1, artist_id: 1, title: "Knife Talk", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Knife+Talk+(Audio)+ft.+21+Savage%2C+Project+Pat.mp3')
+song3 = Song.create!(album_id: 1, artist_id: 1, title: "No Friends in the Industry", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+No+Friends+In+The+Industry.mp3')
 song4 = Song.create!(album_id: 2, artist_id: 1, title: "In My Feelings", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
 song5 = Song.create!(album_id: 2, artist_id: 1, title: "Nonstop", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
 song6 = Song.create!(album_id: 2, artist_id: 1, title: "God's Plan", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
@@ -94,18 +94,17 @@ song10 = Song.create!(album_id: 4, artist_id: 2, title: "Finesse", url:'https://
 song11 = Song.create!(album_id: 4, artist_id: 2, title: "That's What I Like", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
 song12 = Song.create!(album_id: 4, artist_id: 2, title: "Versace on the Floor", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Drake+-+Fair+Trade+(Audio)+ft.+Travis+Scott+(1).mp3')
 song13 = Song.create!(album_id: 5, artist_id: 2, title: "Smokin Out the Window", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song14 = Song.create!(album_id: 5, artist_id: 2, title: "Skate", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song15 = Song.create!(album_id: 5, artist_id: 2, title: "Leave the Door Open", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
+song14 = Song.create!(album_id: 5, artist_id: 2, title: "Skate", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Skate+(Audio).mp3')
+song15 = Song.create!(album_id: 5, artist_id: 2, title: "Leave the Door Open", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Leave+The+Door+Open+(Audio).mp3')
 song16 = Song.create!(album_id: 6, artist_id: 2, title: "Talking to the Moon", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song17 = Song.create!(album_id: 6, artist_id: 2, title: "Just the Way You Are", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song18 = Song.create!(album_id: 6, artist_id: 2, title: "Count on Me", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song19 = Song.create!(album_id: 7, artist_id: 3, title: "LOYALTY", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song20 = Song.create!(album_id: 7, artist_id: 3, title: "DNA", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song21 = Song.create!(album_id: 7, artist_id: 3, title: "HUMBLE", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song22 = Song.create!(album_id: 8, artist_id: 3, title: "Money Trees", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song23 = Song.create!(album_id: 8, artist_id: 3, title: "m.A.A.d city", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song24 = Song.create!(album_id: 8, artist_id: 3, title: "Poetic Justice", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
-song25 = Song.create!(album_id: 9, artist_id: 3, title: "King Kunta", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
+song22 = Song.create!(album_id: 8, artist_id: 3, title: "Money Trees", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Money+Trees.mp3')
+song23 = Song.create!(album_id: 8, artist_id: 3, title: "m.A.A.d city", url:'https://symphonifyphotos.s3.amazonaws.com/songs/m.A.A.d+city.mp3')
+song24 = Song.create!(album_id: 8, artist_id: 3, title: "Poetic Justice", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Poetic+Justice.mp3')
 song26 = Song.create!(album_id: 9, artist_id: 3, title: "Alright", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song27 = Song.create!(album_id: 9, artist_id: 3, title: "These Walls", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
 song28 = Song.create!(album_id: 12, artist_id: 4, title: "THE SHADE", url:'https://symphonifyphotos.s3.amazonaws.com/songs/Bruno+Mars%2C+Anderson.+Paak%2C+Silk+Sonic+-+Smokin+Out+The+Window+(Audio).mp3')
@@ -120,4 +119,4 @@ song36 = Song.create!(album_id: 11, artist_id: 4, title: "Face to Face", url:'ht
 
 
 
-user1 = User.create!(username: "guest1", email: "guest@guest.com", password: "password", name: "demo-man")
+user1 = User.create!(username: "guest", email: "guest@guest.com", password: "password", name: "demo-man")

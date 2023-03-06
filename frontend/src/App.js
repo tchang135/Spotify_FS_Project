@@ -8,6 +8,7 @@ import AlbumIndex from "./components/AlbumIndex";
 import AlbumShowPage from "./components/AlbumShow";
 import SongList from "./components/SongsList";
 import MediaBar from "./components/MediaBar/MediaBar";
+import SearchPage from "./components/SearchPage"
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             <Route path="/albums/:albumId">
               <AlbumShowPage/>
               <SongList/>
+            </Route>
+            <Route path="/search">
+              <SearchPage/>
             </Route>
             <Route path="/login">
               <LoginFormPage />
