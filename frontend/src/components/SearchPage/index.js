@@ -31,12 +31,15 @@ const SearchPage = () => {
 
   return (
     <div>
-      <input type="search" placeholder="Search..." className="searchBarField" onChange={handleChange} />
-      <ul>
+      <input type="search" placeholder="What do you want to listen to?" className="searchBarField" onChange={handleChange} />
+      <ul className="searchResults">
         {filteredData.map((item) => (
           <li key={item.id}>
-            <p>{item.title}</p>
-            <p>{item.artistId}</p>
+            <div className="resultItem">
+                <img id="resultItemPhoto" src={item.photoUrl} alt=""/>
+                <p>{item.title}</p>
+                <p>{item.artistId}</p>
+            </div>
           </li>
         ))}
       </ul>
