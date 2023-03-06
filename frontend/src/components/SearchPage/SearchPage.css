@@ -24,6 +24,10 @@
     align-items: left;
   }
 
+  .resultItem:hover {
+    cursor: pointer;
+  }
+
   #resultItemPhoto {
     height: 40px;
     width: 40px;
