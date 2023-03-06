@@ -62,3 +62,25 @@
 .searchText {
     margin-left: 18px;
 }
+
+.createPlaylistButton {
+    display: flex;
+    margin-left: 32px;
+    margin-top: 23px;
+    font-size: 15px;
+    width: fit-content;
+    align-items: center;
+}
+
+#createPlaylistLogo {
+    font-size: 21px;
+}
+
+#createPlaylistText {
+    margin-left: 18px;
+}
+
+.createPlaylistButton:hover {
+    color :white; 
+    cursor: pointer;
+}
