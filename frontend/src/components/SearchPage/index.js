@@ -43,8 +43,8 @@ const SearchPage = () => {
           <li key={item.id}>
             <div className="resultItem" onClick={() => handleClick(item.id)} >
                 <img id="resultItemPhoto" src={item.photoUrl} alt=""/>
-                <p>{item.title}</p>
-                <p>{item.artistId}</p>
+                <p id="resultTitle">{item.title}</p>
+                <p id="resultArtist">{item.artistId}</p>
             </div>
           </li>
         ))}
