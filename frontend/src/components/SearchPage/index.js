@@ -13,7 +13,9 @@ const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
   const songs = useSelector(state => state.songs ? Object.values(state.songs) : []);
-  
+  const artists = useSelector(state => state.artist ? Object.values(state.artist) : [])
+  debugger
+
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
