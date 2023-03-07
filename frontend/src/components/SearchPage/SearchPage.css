@@ -40,3 +40,13 @@
     height: 40px;
     width: 40px;
   }
+
+  #resultTitle {
+    color: white;
+    margin-left: 10px;
+  }
+
+  #resultArtist {
+    color: white;
+    margin-left: 30px;;
+  }
