@@ -22,11 +22,8 @@ export const fetchAlbum = (artistId) => async dispatch => {
 }
 
 export const fetchArtists = () => async (dispatch) => {
-    debugger
     const response = await fetch(`/api/artists`);
-    debugger
     const data = await response.json();
-    debugger
     return dispatch(receiveArtists(data.artists));
   };
 

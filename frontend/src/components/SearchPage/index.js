@@ -14,7 +14,7 @@ const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
   const songs = useSelector(state => state.songs ? Object.values(state.songs) : []);
-  const artists = useSelector(state => state.artists ? Object.values(state.artists) : [])
+  const artists = useSelector(state => state.artist ? Object.values(state.artist) : [])
 
 
   const handleChange = (e) => {
@@ -48,8 +48,7 @@ const SearchPage = () => {
             <div className="resultItem" onClick={() => handleClick(item.id)} >
                 <img id="resultItemPhoto" src={item.photoUrl} alt=""/>
                 <p id="resultTitle">{item.title}</p>
-                <p id="resultArtist">{item.artistId}</p>
-                {console.log(artists)}
+                <p id="resultArtist">{artists.find(artist => artist.id === item.artistId)?.name}</p>
             </div>
           </li>
         ))}

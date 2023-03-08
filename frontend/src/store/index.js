@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   songs: songsReducer,
   albums: albumsReducer,
-  artists: artistsReducer,
+  artist: artistsReducer,
   currentSong: currentSongReducer,
   currentAlbum: currentAlbumReducer
 });

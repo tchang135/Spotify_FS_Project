@@ -9,6 +9,7 @@ import AlbumShowPage from "./components/AlbumShow";
 import SongList from "./components/SongsList";
 import MediaBar from "./components/MediaBar/MediaBar";
 import SearchPage from "./components/SearchPage"
+import CreatePlaylistPage from "./components/PlaylistCreate"
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
             <br />
             <Route path="/signup">
               <SignupFormPage />
+            </Route>
+            <Route path="/createPlaylist">
+              <CreatePlaylistPage />
             </Route>
           </>
         </Switch>
