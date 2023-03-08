@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk' 
 import songsReducer from './song';
 import albumsReducer from './album';
-import artistReducer from './artist';
+import artistsReducer from './artist';
 import sessionReducer from './session';
 import currentSongReducer from './currentSong';
 import currentAlbumReducer from './currentAlbum';
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   songs: songsReducer,
   albums: albumsReducer,
-  artist: artistReducer,
+  artists: artistsReducer,
   currentSong: currentSongReducer,
   currentAlbum: currentAlbumReducer
 });

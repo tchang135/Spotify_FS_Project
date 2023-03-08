@@ -21,18 +21,21 @@ export const fetchAlbum = (artistId) => async dispatch => {
     return dispatch(receiveArtist(data)); 
 }
 
-export const fetchArtists = () => async dispatch => {
+export const fetchArtists = () => async (dispatch) => {
+    debugger
     const response = await fetch(`/api/artists`);
+    debugger
     const data = await response.json();
-    return dispatch(receiveArtists(data));
-}
+    debugger
+    return dispatch(receiveArtists(data.artists));
+  };
 
-const artistReducer = (state = {}, action) => {
+const artistsReducer = (state = {}, action) => {
     const nextState = { ...state };
 
     switch (action.type) {
         case RECEIVE_ARTISTS:
-            return { ...nextState, ...action.albums };
+            return { ...nextState, ...action.artists };
         case RECEIVE_ARTIST:
             return { ...nextState, ...action.artist };
         case RECEIVE_ALBUM:
@@ -43,4 +46,4 @@ const artistReducer = (state = {}, action) => {
     }
 }
 
-export default artistReducer
+export default artistsReducer

@@ -29,6 +29,11 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    has_many :playlists, 
+        primary_key: :id, 
+        foreign_key: :author_id, 
+        dependent: :destroy
+
 
     def self.find_by_credentials(credential, password)
         field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
