@@ -10,10 +10,16 @@
 #  updated_at :datetime         not null
 #
 class Playlist < ApplicationRecord
-    validates :title, :author_id, presence: true
+    validates :title, presence: true
 
     belongs_to :user, 
         primary_key: :id, 
         foreign_key: :author_id, 
         class_name: :User
+
+    has_many :playlist_songs, dependent: :destroy 
+
+    has_many :songs, 
+    through: :playlist_songs, 
+    source: :song
 end
