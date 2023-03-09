@@ -13,8 +13,8 @@ export const receiveAlbum = (payload) => ({
 
 //selectors
 
-export const getAlbums = (state) => state.albums ? Object.values(state.albums) : [];
-export const getAlbum = (albumId) => (state) => state.albums ? state.albums[albumId] : null;
+// export const getAlbums = (state) => state.albums ? Object.values(state.albums) : [];
+// export const getAlbum = (albumId) => (state) => state.albums ? state.albums[albumId] : null;
 
 
 export const fetchAlbums = () => async dispatch => {
