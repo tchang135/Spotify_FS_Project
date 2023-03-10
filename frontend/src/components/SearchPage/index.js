@@ -25,6 +25,10 @@ const SearchPage = () => {
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const filteredSong = songs.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   useEffect(() => {
       dispatch(fetchAlbums())
       dispatch(fetchSongs())
@@ -35,7 +39,11 @@ const SearchPage = () => {
       return null
   } 
 
-  const handleClick = (albumId) => {
+  if (songs.length === 0 ) {
+    return null
+} 
+
+  const handleClickAlbum = (albumId) => {
     history.push(`/albums/${albumId}`);
   };
 
@@ -43,12 +51,20 @@ const SearchPage = () => {
     <div>
       <input type="search" placeholder="What do you want to listen to?" className="searchBarField" onChange={handleChange} />
       <ul className="searchResults">
-        {filteredAlbum.map((item) => (
-          <li key={item.id}>
-            <div className="resultItem" onClick={() => handleClick(item.id)} >
-                <img id="resultItemPhoto" src={item.photoUrl} alt=""/>
-                <p id="resultTitle">{item.title}</p>
-                <p id="resultArtist">{artists.find(artist => artist.id === item.artistId)?.name}</p>
+        {filteredSong.map((songItem) => (
+          <li key={songItem.id}>
+            <p>{songItem.title}</p>
+            <p>{artists.find(artist => artist.id === songItem.artistId)?.name}</p>
+          </li>
+        ))}
+
+
+        {filteredAlbum.map((albumItem) => (
+          <li key={albumItem.id}>
+            <div className="resultItem" onClick={() => handleClickAlbum(albumItem.id)} >
+                <img id="resultItemPhoto" src={albumItem.photoUrl} alt=""/>
+                <p id="resultTitle">{albumItem.title}</p>
+                <p id="resultArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
             </div>
           </li>
         ))}

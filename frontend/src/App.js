@@ -10,6 +10,7 @@ import SongList from "./components/SongsList";
 import MediaBar from "./components/MediaBar/MediaBar";
 import SearchPage from "./components/SearchPage"
 import CreatePlaylistPage from "./components/PlaylistCreate"
+import PlaylistShow from "./components/PlaylistShow";
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/createPlaylist">
               <CreatePlaylistPage />
+            </Route>
+            <Route path='/showPlaylist'>
+              <PlaylistShow />
             </Route>
           </>
         </Switch>
