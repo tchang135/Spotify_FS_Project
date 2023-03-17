@@ -7,13 +7,19 @@
 .searchBarField {
     position: fixed;
     z-index: 10;
-    top: 1.5%;
+    top: .2%;
     left: 20%;
     width: 30vw;
     height: 4.5vh;
     border-radius: 50px;
     padding: 10px;
   }
+
+  /* .searchResultsContainer {
+    height: 100%;
+    width: 80%;
+    overflow-y: scroll;
+  } */
 
   .searchResults {
     position: fixed;
@@ -22,11 +28,26 @@
     left: 20%;
     justify-content: left;
     height: 100%;
-    width: 100%;
+    width: 80%;
     overflow-y: scroll;
   }
 
-  .resultItem {
+  .songsHeader {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .albumsHeader {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .resultSongItem {
     display: flex;
     /* justify-content: left; */
     margin-bottom: 20px;
@@ -36,7 +57,17 @@
     padding: 10px;
   }
 
-  .resultItem:hover {
+  .resultAlbumItem {
+    display: flex;
+    /* justify-content: left; */
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: left;
+    width: fit-content;
+    padding: 10px;
+  }
+
+  .resultAlbumItem:hover {
     background-color: rgb(55, 54, 54);
     height: fit-content;
     width: fit-content;

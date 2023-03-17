@@ -50,25 +50,30 @@ const SearchPage = () => {
   return (
     <div>
       <input type="search" placeholder="What do you want to listen to?" className="searchBarField" onChange={handleChange} />
-      <ul className="searchResults">
-        {filteredSong.map((songItem) => (
-          <li key={songItem.id}>
-            <p>{songItem.title}</p>
-            <p>{artists.find(artist => artist.id === songItem.artistId)?.name}</p>
-          </li>
-        ))}
+      <div className="searchResultsContainer">
+        <ul className="searchResults">
+          <h3 className="songsHeader">Songs</h3>
+          {filteredSong.map((songItem) => (
+            <li key={songItem.id}>
+              <div className="resultSongItem">
+                <p id="resultTitle">{songItem.title}</p>
+                <p id="resultArtist">{artists.find(artist => artist.id === songItem.artistId)?.name}</p>
+              </div>
+            </li>
+          ))}
 
-
-        {filteredAlbum.map((albumItem) => (
-          <li key={albumItem.id}>
-            <div className="resultItem" onClick={() => handleClickAlbum(albumItem.id)} >
-                <img id="resultItemPhoto" src={albumItem.photoUrl} alt=""/>
-                <p id="resultTitle">{albumItem.title}</p>
-                <p id="resultArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+          <h3 className="albumsHeader">Albums</h3>
+          {filteredAlbum.map((albumItem) => (
+            <li key={albumItem.id}>
+              <div className="resultAlbumItem" onClick={() => handleClickAlbum(albumItem.id)} >
+                  <img id="resultItemPhoto" src={albumItem.photoUrl} alt=""/>
+                  <p id="resultTitle">{albumItem.title}</p>
+                  <p id="resultArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
