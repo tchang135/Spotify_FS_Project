@@ -57,6 +57,15 @@
     padding: 10px;
   }
 
+  .resultSongItem:hover {
+    background-color: rgb(55, 54, 54);
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
   .resultAlbumItem {
     display: flex;
     /* justify-content: left; */

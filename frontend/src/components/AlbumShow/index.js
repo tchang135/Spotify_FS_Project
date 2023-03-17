@@ -33,8 +33,6 @@ function AlbumShowPage() {
     } 
 
 
-    
-
     return (
         <div className='albumShow'>
             <div className='albumDescription'>
