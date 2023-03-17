@@ -42,6 +42,7 @@
 
   .albumsHeader {
     margin-bottom: 30px;
+    margin-top: 70px;
     font-size: 32px;
     font-weight: bold;
     color: white;
@@ -85,7 +86,7 @@
     border-radius: 10px;
   }
 
-  #resultItemPhoto {
+  #resultAlbumPhoto {
     height: 40px;
     width: 40px;
   }
@@ -97,5 +98,5 @@
 
   #resultArtist {
     color: white;
-    margin-left: 30px;;
+    margin-left: 50px;;
   }

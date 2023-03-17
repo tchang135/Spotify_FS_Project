@@ -60,9 +60,18 @@ const SearchPage = () => {
           <h3 className="songsHeader">Songs</h3>
           {filteredSong.map((songItem) => (
             <li key={songItem.id}>
-              <div className="resultSongItem" onClick={() => handleSongClick(songItem.url)} >
+              <div className="resultSongItem" onClick={() => handleSongClick(songItem.url)}>
+                <p>
+                  {songItem.albumId && (
+                    <>
+                      <img id="resultAlbumPhoto" src={albums.find((album) => album.id === songItem.albumId)?.photoUrl} alt="" />
+                    </>
+                  )}
+                </p>
                 <p id="resultTitle">{songItem.title}</p>
-                <p id="resultArtist">{artists.find(artist => artist.id === songItem.artistId)?.name}</p>
+                <p id="resultArtist">
+                  {artists.find((artist) => artist.id === songItem.artistId)?.name}
+                </p>
               </div>
             </li>
           ))}
@@ -71,7 +80,7 @@ const SearchPage = () => {
           {filteredAlbum.map((albumItem) => (
             <li key={albumItem.id}>
               <div className="resultAlbumItem" onClick={() => handleClickAlbum(albumItem.id)} >
-                  <img id="resultItemPhoto" src={albumItem.photoUrl} alt=""/>
+                  <img id="resultAlbumPhoto" src={albumItem.photoUrl} alt=""/>
                   <p id="resultTitle">{albumItem.title}</p>
                   <p id="resultArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
               </div>
