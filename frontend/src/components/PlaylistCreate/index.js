@@ -1,34 +1,45 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchPlaylists } from "../../store/playlist";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const CreatePlaylist = ({ history }) => {
-    const dispatch = useDispatch();
-    const currentUser = useSelector(state => state.session.user);
+const CreatePlaylistButton = () => {
+  const currentUser = useSelector((state) => state.session.user);
+  const history = useHistory();
 
-    useEffect(() => {
-      const addPlaylist = async () => {
-        const response = await fetch("/api/playlists", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: "New Playlist",
-            description: "Write a description here",
-            userId: currentUser.id,
-            photoUrl: "",
-          }),
-        });
-        const data = await response.json();
-        dispatch(fetchPlaylists());
-        history.push(`/playlists/${data.id}`);
-      };
-      addPlaylist();
-    }, [dispatch, history]);
-  
-    return <p>Creating Playlist...</p>;
+  const handleCreatePlaylist = async () => {
+    try {
+      const response = await fetch("/api/playlists", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${currentUser.token}`,
+        },
+        body: JSON.stringify({
+          playlist: {
+            author_id: currentUser.id,
+            title: "New Playlist",
+            public: true,
+          }
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+
+      const playlist = await response.json();
+      history.push(`/playlists/${playlist.id}`);
+    } catch (error) {
+      console.error(error);
+      // handle error
+    }
   };
-  
-  export default CreatePlaylist;
+
+  return (
+    <div className="createPlaylistButton" onClick={handleCreatePlaylist}>
+      <i id="createPlaylistLogo" class="fa-solid fa-plus"></i>
+      <p id="createPlaylistText">Create a Playlist</p>
+    </div>
+  );
+};
+
+export default CreatePlaylistButton;
