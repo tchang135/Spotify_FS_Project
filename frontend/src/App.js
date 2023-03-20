@@ -42,7 +42,7 @@ function App() {
             <Route path="/createPlaylist">
               <CreatePlaylistPage />
             </Route>
-            <Route path='/showPlaylist'>
+            <Route path="/playlists/:playlistId">
               <PlaylistShow />
             </Route>
           </>

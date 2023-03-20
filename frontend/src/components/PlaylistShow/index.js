@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist } from "../../store/playlist";
 
 const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
-  const [playlist, setPlaylist] = useState(null);
+  const playlist = useSelector((state) => state.playlists[playlistId]);
 
   useEffect(() => {
-   
-    dispatch(fetchPlaylist());
-  }, [playlistId]);
+    if (playlistId) {
+      dispatch(fetchPlaylist(playlistId));
+    }
+  }, [playlistId, dispatch]);
 
   if (!playlist) {
     return <div>Loading...</div>;
@@ -19,7 +20,7 @@ const PlaylistShow = () => {
 
   return (
     <div>
-      <h1>{playlist.name}</h1>
+      <h1>{playlist.title}</h1>
       <p>{playlist.description}</p>
       {/* Render other playlist information as needed */}
     </div>

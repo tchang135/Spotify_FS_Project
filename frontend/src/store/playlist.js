@@ -17,11 +17,11 @@ export const fetchPlaylists = () => async dispatch => {
     return dispatch(receivePlaylists(data.playlists))
 }
 
-export const fetchPlaylist = (playlistId) => async dispatch => {
+export const fetchPlaylist = (playlistId) => async (dispatch) => {
     const response = await fetch(`/api/playlists/${playlistId}`);
     const data = await response.json();
-    return dispatch(receivePlaylist(data))
-}
+    return dispatch(receivePlaylist(data));
+};
 
 const playlistsReducer = (state = {}, action) => {
     const nextState = { ...state };
