@@ -5,6 +5,8 @@ const CreatePlaylistButton = () => {
   const currentUser = useSelector((state) => state.session.user);
   const history = useHistory();
 
+  
+
   const handleCreatePlaylist = async () => {
     try {
       const response = await fetch("/api/playlists", {
@@ -15,10 +17,10 @@ const CreatePlaylistButton = () => {
         },
         body: JSON.stringify({
           playlist: {
-            author_id: currentUser.id,
             title: "New Playlist",
+            description: "This is a new playlist", // Add a default description here
             public: true,
-          }
+          },
         }),
       });
 
@@ -30,13 +32,13 @@ const CreatePlaylistButton = () => {
       history.push(`/playlists/${playlist.id}`);
     } catch (error) {
       console.error(error);
-      // handle error
+      // handle error, e.g., show a user-friendly message or update component state
     }
   };
 
   return (
     <div className="createPlaylistButton" onClick={handleCreatePlaylist}>
-      <i id="createPlaylistLogo" class="fa-solid fa-plus"></i>
+      <i id="createPlaylistLogo" className="fa-solid fa-plus"></i>
       <p id="createPlaylistText">Create a Playlist</p>
     </div>
   );

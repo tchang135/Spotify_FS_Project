@@ -11,7 +11,9 @@
 #
 class Playlist < ApplicationRecord
     validates :title, presence: true
-
+    validates :public, inclusion: { in: [true, false] }
+    validates :description, presence: true
+    
     belongs_to :user, 
         primary_key: :id, 
         foreign_key: :author_id, 

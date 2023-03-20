@@ -1,4 +1,5 @@
 class Api::PlaylistsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def index
         @playlists = Playlist.all 
         render :index 
@@ -9,16 +10,18 @@ class Api::PlaylistsController < ApplicationController
         render :show
     end
 
-    def create 
+    def create
         @playlist = Playlist.new(playlist_params)
         @playlist.author_id = current_user.id
-
-        if @playlist.save 
-            render :show
-        else  
-            render json: @playlist.errors.full_messages, status: 422
+      
+        if @playlist.save
+          render :show
+        else
+          puts @playlist.errors.full_messages
+          render json: @playlist.errors.full_messages, status: 422
         end
-    end
+      end
+      
 
     def update 
         @playlist = Playlist.find(params[:playlist_id])
@@ -44,9 +47,8 @@ class Api::PlaylistsController < ApplicationController
 
     private 
 
-    def playlist_params 
-        params.require(:playlist).permit(:title)
+    def playlist_params
+        params.require(:playlist).permit(:title, :public, :description)
     end
-
 
 end
