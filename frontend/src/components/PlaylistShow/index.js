@@ -6,7 +6,7 @@ import { fetchPlaylist } from "../../store/playlist";
 const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
-  const playlist = useSelector((state) => state.playlists[playlistId]);
+  const playlist = useSelector((state) => state.playlists);
 
   useEffect(() => {
     if (playlistId) {
@@ -15,6 +15,7 @@ const PlaylistShow = () => {
   }, [playlistId, dispatch]);
 
   if (!playlist) {
+    console.log("Current playlists state:", playlist);
     return <div>Loading...</div>;
   }
 
@@ -22,7 +23,6 @@ const PlaylistShow = () => {
     <div>
       <h1>{playlist.title}</h1>
       <p>{playlist.description}</p>
-      {/* Render other playlist information as needed */}
     </div>
   );
 };
