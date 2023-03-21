@@ -15,8 +15,7 @@ const PlaylistShow = () => {
     }
   }, [playlistId, dispatch]);
 
-  if (!playlist) {
-    console.log("Current playlists state:", playlist);
+  if (!playlistId) {
     return <div>Loading...</div>;
   }
 

@@ -14,7 +14,7 @@ export const receivePlaylist = (playlist) => ({
 export const fetchPlaylists = () => async dispatch => {
     const response = await fetch(`/api/playlists`);
     const data = await response.json();
-    return dispatch(receivePlaylists(data.playlists))
+    return dispatch(receivePlaylists(data))
 }
 
 export const fetchPlaylist = (playlistId) => async (dispatch) => {

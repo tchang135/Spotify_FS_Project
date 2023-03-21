@@ -84,3 +84,10 @@
     color :white; 
     cursor: pointer;
 }
+
+.thin-line {
+    border-top: 1px solid #414141;
+    margin-top: 27px;
+    width: 80%;
+    margin-left: 10%;
+}

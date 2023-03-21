@@ -1,0 +1,21 @@
+.playlistIndexItemContainer {
+    margin-bottom: 30px;
+}
+
+.playlistIndexItem {
+    color: rgba(255, 255, 255, 0.779);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.playlistIndexItem:hover {
+    color :white; 
+    cursor: pointer;
+}
+
+.allPlaylists {
+    margin-top: 30px;
+    margin-left: 30px;
+    border-top: 10px;
+    color: white;
+}
