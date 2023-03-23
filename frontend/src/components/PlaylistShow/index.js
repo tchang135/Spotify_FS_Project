@@ -8,7 +8,8 @@ import './PlaylistShow.css';
 const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
-  const playlist = useSelector((state) => state.playlists);
+  const playlist = useSelector((state) => state.playlists.show_playlist);
+
   const history = useHistory();
   const [editMode, setEditMode] = useState(false);
 
@@ -40,8 +41,8 @@ const PlaylistShow = () => {
         <PlaylistEdit playlistId={playlistId} setEditMode={setEditMode} />
       ) : (
         <>
-          <h1 className="newPlaylistTitle">{playlist.title}</h1>
-          <p className="newPlaylistDescription">{playlist.description}</p>
+          <h1 className="newPlaylistTitle">{playlist?.title}</h1>
+          <p className="newPlaylistDescription">{playlist?.description}</p>
           <button onClick={handleDelete}>Delete</button>
           <button onClick={handleEdit}>Edit</button>
         </>

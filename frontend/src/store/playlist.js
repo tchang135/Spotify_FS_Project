@@ -9,7 +9,7 @@ export const receivePlaylists = (playlists) => ({
 
 export const receivePlaylist = (playlist) => ({
     type: RECEIVE_PLAYLIST,
-    playlist
+    show_playlist: playlist
 })
 
 export const removePlaylist = (playlistId) => ({
@@ -40,8 +40,8 @@ export const editPlaylist = (playlistId, formData) => async (dispatch) => {
     });
     debugger
     if (response.ok) {
-      const data = await response.json();
-      dispatch(receivePlaylist(data));
+        const data = await response.json();
+        dispatch(receivePlaylist(data));
     }
 };
   
@@ -63,7 +63,7 @@ const playlistsReducer = (state = {}, action) => {
         case RECEIVE_PLAYLISTS:
             return { ...nextState, ...action.playlists };
         case RECEIVE_PLAYLIST:
-            return { ...nextState, ...action.playlist };
+            return { ...nextState, show_playlist: action.show_playlist };
         case REMOVE_PLAYLIST:
             delete nextState[action.playlistId];
             return nextState;

@@ -6,22 +6,31 @@ import { fetchPlaylists } from "../../store/playlist";
 import './PlaylistIndex.css'
 
 const PlaylistIndex = () => {
-  const playlists = Object.values(useSelector((state) => state?.playlists))
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchPlaylists())
-  }, []);
-
-  return (
-    <div className="allPlaylists">
-      {playlists?.map((playlist) => (
-        <div key={playlist.id} className="playlistIndexItemContainer" >
-          <Link className="playlistIndexItem" to={`/playlists/${playlist.id}`}>{playlist.title}</Link>
-        </div>
-      ))}
-    </div>
-  );
+    const playlists = useSelector((state) => Object.values(state.playlists));
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(fetchPlaylists());
+    }, []);
+  
+    return (
+      <div className="allPlaylists">
+        {playlists.map((playlist) => {
+          if (playlist.hasOwnProperty("show_playlist")) {
+            return null;
+          }
+  
+          return (
+            <div key={playlist.id} className="playlistIndexItemContainer">
+              <Link className="playlistIndexItem" to={`/playlists/${playlist.id}`}>
+                {playlist.title}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    );
 };
+  
 
 export default PlaylistIndex;
