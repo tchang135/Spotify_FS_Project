@@ -29,6 +29,23 @@ export const fetchPlaylist = (playlistId) => async (dispatch) => {
     return dispatch(receivePlaylist(data));
 };
 
+export const editPlaylist = (playlistId, formData) => async (dispatch) => {
+    debugger
+    const response = await fetch(`/api/playlists/${playlistId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+    debugger
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(receivePlaylist(data));
+    }
+};
+  
+
 export const deletePlaylist = (playlistId) => async (dispatch) => {
   const response = await fetch(`/api/playlists/${playlistId}`, {
     method: 'DELETE'

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist } from "../../store/playlist";
-import './PlaylistShow.css'
+import PlaylistEdit from "../PlaylistEdit";
+import './PlaylistShow.css';
 
 const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
   const playlist = useSelector((state) => state.playlists);
   const history = useHistory();
+  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
     if (playlistId) {
@@ -24,15 +26,26 @@ const PlaylistShow = () => {
     }
   };
 
+  const handleEdit = () => {
+    setEditMode(true);
+  };
+
   if (!playlistId) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className="newPlaylistPage">
-      <h1 className="newPlaylistTitle">{playlist.title}</h1>
-      <p className="newPlaylistDescription">{playlist.description}</p>
-      <button onClick={handleDelete}>Delete</button>
+      {editMode ? (
+        <PlaylistEdit playlistId={playlistId} setEditMode={setEditMode} />
+      ) : (
+        <>
+          <h1 className="newPlaylistTitle">{playlist.title}</h1>
+          <p className="newPlaylistDescription">{playlist.description}</p>
+          <button onClick={handleDelete}>Delete</button>
+          <button onClick={handleEdit}>Edit</button>
+        </>
+      )}
     </div>
   );
 };

@@ -32,7 +32,7 @@ const CreatePlaylistButton = () => {
       history.push(`/playlists/${playlist.id}`);;
     } catch (error) {
       console.error(error);
-      // handle error, e.g., show a user-friendly message or update component state
+     
     }
   };
 
