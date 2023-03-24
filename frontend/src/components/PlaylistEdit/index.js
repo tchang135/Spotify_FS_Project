@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { editPlaylist } from "../../store/playlist";
+import "./PlaylistEdit.css"
 
 const PlaylistEdit = ({ playlistId, setEditMode }) => {
     const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
   
   
     return (
-      <form className="playlist-edit-form" onSubmit={handleSubmit}>
+      <form className="playlistEditForm" onSubmit={handleSubmit}>
         <h2>Edit Playlist</h2>
         <label htmlFor="title">Title</label>
         <input
@@ -41,7 +42,7 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
           onChange={(e) => setDescription(e.target.value)}
         />
         <label htmlFor="public">Public</label>
-      <div className="public-options">
+      <div className="publicOptions">
         <label>
           <input
             type="radio"
@@ -63,8 +64,8 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
           Private
         </label>
       </div>
-      <button type="submit">Save</button>
-      <button type="button" onClick={handleEditCancel}>Cancel</button>
+      <button className="submitEditPlaylist" type="submit">Save</button>
+      <button className="cancelEditPlaylist" type="button" onClick={handleEditCancel}>Cancel</button>
     </form>
   );
 };

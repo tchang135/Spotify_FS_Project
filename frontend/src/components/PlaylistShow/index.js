@@ -43,8 +43,8 @@ const PlaylistShow = () => {
         <>
           <h1 className="newPlaylistTitle">{playlist?.title}</h1>
           <p className="newPlaylistDescription">{playlist?.description}</p>
-          <button onClick={handleDelete}>Delete</button>
-          <button onClick={handleEdit}>Edit</button>
+          <button className="playlistDeleteButton" onClick={handleDelete}>Delete</button>
+          <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
         </>
       )}
     </div>

@@ -1,0 +1,15 @@
+.cancelEditPlaylist {
+    color: white;
+}
+
+.cancelEditPlaylist:hover {
+    cursor: pointer;
+}
+
+.submitEditPlaylist {
+    color: white;
+}
+
+.submitEditPlaylist:hover {
+    cursor: pointer;
+}

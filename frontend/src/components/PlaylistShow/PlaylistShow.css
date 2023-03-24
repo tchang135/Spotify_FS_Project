@@ -2,4 +2,21 @@
     position: fixed;
     top: 70px;
     left: 300px;
+    color: white;
+}
+
+.playlistEditButton {
+    color: white;
+}
+
+.playlistEditButton:hover {
+    cursor: pointer;
+}
+
+.playlistDeleteButton {
+    color: white;
+}
+
+.playlistDeleteButton:hover {
+    cursor: pointer;
 }
