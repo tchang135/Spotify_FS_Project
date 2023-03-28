@@ -12,6 +12,7 @@ const PlaylistShow = () => {
 
   const history = useHistory();
   const [editMode, setEditMode] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (playlistId) {
@@ -29,6 +30,11 @@ const PlaylistShow = () => {
 
   const handleEdit = () => {
     setEditMode(true);
+    setDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
   if (!playlistId) {
@@ -41,10 +47,22 @@ const PlaylistShow = () => {
         <PlaylistEdit playlistId={playlistId} setEditMode={setEditMode} />
       ) : (
         <>
-          <h1 className="newPlaylistTitle">{playlist?.title}</h1>
-          <p className="newPlaylistDescription">{playlist?.description}</p>
-          <button className="playlistDeleteButton" onClick={handleDelete}>Delete</button>
-          <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
+          <div className="playlistTopColor">
+            <h1 className="newPlaylistTitle">{playlist?.title}</h1>
+            <p className="newPlaylistDescription">{playlist?.description}</p>
+          </div>
+          <div className="playlistDropdownContainer">
+            <button className="playlistDropdownButton" onClick={toggleDropdown}>
+              <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
+              <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+            </button>
+            {dropdownOpen && (
+              <div className="playlistDropdownContent">
+                <button className="playlistDeleteButton" onClick={handleDelete}>Delete</button>
+                <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
+              </div>
+            )}
+          </div>
         </>
       )}
     </div>

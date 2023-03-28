@@ -46,7 +46,7 @@ const SongList = () => {
   
     return (
       <>
-      <div className="bigPlayButton"key={songs[0].url} onClick={() => handleSongClick(songs[0].url)}>
+      <div className="bigPlayButtonAlbum"key={songs[0].url} onClick={() => handleSongClick(songs[0].url)}>
         <i class="fa-solid fa-circle-play"></i>
       </div>
       <h1 className="titleHeader">TITLE</h1>
