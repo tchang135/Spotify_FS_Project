@@ -5,6 +5,12 @@
     color: white;
 }
 
+.newPlaylistTitle {
+    position: fixed;
+    top: 120px;
+    left: 600px;
+}
+
 .playlistEditButton {
     color: white;
 }
