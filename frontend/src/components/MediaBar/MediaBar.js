@@ -13,22 +13,10 @@ const MediaBar = () => {
         return currentAlbum.id ? Object.values(currentAlbum.songs) : []
     });
 
-    if (!currentSong 
-        // ||
-        //  !currentSongId
-         ) {
+    if (!currentSong) {
         return null
     }
 
-    // const handleClickNext = () => {
-    //     const songId = currentSongId < currentAlbumSongs.length - 1 ? currentSongId + 1 : 0;
-    //     dispatch(setCurrentSong(songId));
-    // };
-
-    // const handleClickPrevious = () => {
-    //     const songId = currentSongId > 0 ? currentSongId - 1 : currentAlbumSongs.length - 1;
-    //     dispatch(setCurrentSong(songId));
-    // };
 
     if (location.pathname === '/signup' || location.pathname === '/login') {
         return null;
@@ -39,9 +27,6 @@ const MediaBar = () => {
         className="songbar"
         src={currentSong}
         showSkipControls
-        // onClickNext={handleClickNext}
-        // onClickPrevious={handleClickPrevious}
-        // onEnded={handleClickNext}
         showFilledVolume
         />
     )

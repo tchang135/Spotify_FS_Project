@@ -18,7 +18,7 @@ const CreatePlaylistButton = () => {
         body: JSON.stringify({
           playlist: {
             title: "New Playlist",
-            description: "This is a new playlist", // Add a default description here
+            description: "This is a new playlist", 
             public: true,
           },
         }),
