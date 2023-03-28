@@ -62,9 +62,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_193614) do
   end
 
   create_table "playlist_songs", force: :cascade do |t|
-    t.integer "song_id", null: false
-    t.integer "playlist_id", null: false
+    t.bigint "song_id", null: false
+    t.bigint "playlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["song_id", "playlist_id"], name: "index_playlist_songs_on_song_id_and_playlist_id", unique: true
     t.index ["song_id"], name: "index_playlist_songs_on_song_id"
   end
 
@@ -106,6 +109,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_193614) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "artists"
+  add_foreign_key "playlist_songs", "playlists"
+  add_foreign_key "playlist_songs", "songs"
   add_foreign_key "playlists", "users", column: "author_id"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "artists"
