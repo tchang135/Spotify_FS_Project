@@ -7,6 +7,7 @@ import sessionReducer from './session';
 import currentSongReducer from './currentSong';
 import currentAlbumReducer from './currentAlbum';
 import playlistsReducer from './playlist';
+// import playlistSongsReducer from './playlistSong';
 
 
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   currentSong: currentSongReducer,
   currentAlbum: currentAlbumReducer,
   playlists: playlistsReducer
+  // playlistSongs: playlistSongsReducer
 });
 
 

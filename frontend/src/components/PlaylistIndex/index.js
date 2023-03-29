@@ -21,7 +21,7 @@ const PlaylistIndex = () => {
           }
   
           return (
-            <div key={playlist.id} className="playlistIndexItemContainer">
+            <div key={playlist?.id} className="playlistIndexItemContainer">
               <Link className="playlistIndexItem" to={`/playlists/${playlist.id}`}>
                 {playlist.title}
               </Link>
