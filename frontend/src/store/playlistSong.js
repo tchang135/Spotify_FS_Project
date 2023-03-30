@@ -18,13 +18,13 @@ export const removePlaylistSong = (playlistSongId) => ({
 });
 
 export const fetchPlaylistSongs = (playlistId) => async (dispatch) => {
-  const response = await fetch(`/api/playlists/${playlistId}/playlist_songs`);
+  const response = await fetch(`/api/playlists/${playlistId}/playlistSongs`);
   const data = await response.json();
   return dispatch(receivePlaylistSongs(data));
 };
 
-export const createPlaylistSong = (playlistSong) => async (dispatch) => {
-  const response = await fetch(`/api/playlist_songs`, {
+export const createPlaylistSong = (playlistId, playlistSong) => async (dispatch) => {
+  const response = await fetch(`/api/playlists/${playlistId}/playlist_songs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -37,8 +37,8 @@ export const createPlaylistSong = (playlistSong) => async (dispatch) => {
   }
 };
 
-export const deletePlaylistSong = (playlistSongId) => async (dispatch) => {
-  const response = await fetch(`/api/playlist_songs/${playlistSongId}`, {
+export const deletePlaylistSong = (playlistId, playlistSongId) => async (dispatch) => {
+  const response = await fetch(`/api/playlists/${playlistId}/playlistSongs/${playlistSongId}`, {
     method: 'DELETE'
   });
   if (response.ok) {

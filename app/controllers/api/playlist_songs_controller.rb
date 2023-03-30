@@ -1,4 +1,4 @@
-class PlaylistSongsController < ApplicationController
+class Api::PlaylistSongsController < ApplicationController
     before_action :set_playlist_song, only: [:destroy]
   
     def create
