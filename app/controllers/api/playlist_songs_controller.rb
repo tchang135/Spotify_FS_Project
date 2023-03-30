@@ -1,5 +1,6 @@
 class Api::PlaylistSongsController < ApplicationController
     before_action :set_playlist_song, only: [:destroy]
+    skip_before_action :verify_authenticity_token
   
     def create
       playlist_song = PlaylistSong.new(playlist_song_params)
