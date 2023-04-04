@@ -9,6 +9,19 @@ const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
   const playlist = useSelector((state) => state.playlists.show_playlist);
+  const playlistSongs = useSelector((state) => state.playlists.show_playlist?.playlistSongs);
+  const playlistSongIds = playlistSongs?.map((playlistSong) => playlistSong?.songId);
+  const songs = useSelector((state) => {
+    const final = [];
+    const songsArr = Object.values(state.songs);
+    for (let i = 0; i < songsArr.length; i++) {
+      const currentSong = songsArr[i];
+      if (playlistSongIds && playlistSongIds.includes(currentSong.id)) {
+        final.push(currentSong);
+      }
+    }
+    return final;
+});
 
   const history = useHistory();
   const [editMode, setEditMode] = useState(false);
@@ -62,6 +75,14 @@ const PlaylistShow = () => {
                 <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
               </div>
             )}
+          </div>
+          <div className="playlistSongsContainer">
+          {songs?.map((song) => (
+            <div key={song.id} className="playlistSong">
+              <p className="songTitle">{song.title}</p>
+              <p className="songArtist">{song.artist}</p>
+            </div>
+          ))}
           </div>
         </>
       )}
