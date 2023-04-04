@@ -76,9 +76,9 @@ const PlaylistShow = () => {
               </div>
             )}
           </div>
-          <div className="playlistSongsContainer">
+          <div className="playlistSongsList">
           {songs?.map((song) => (
-            <div key={song.id} className="playlistSong">
+            <div key={song.id} className="playlistSongObject">
               <p className="songTitle">{song.title}</p>
               <p className="songArtist">{song.artist}</p>
             </div>
