@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist } from "../../store/playlist";
+import { fetchSongs } from "../../store/song";
 import PlaylistEdit from "../PlaylistEdit";
 import './PlaylistShow.css';
 
@@ -29,6 +30,7 @@ const PlaylistShow = () => {
 
   useEffect(() => {
     if (playlistId) {
+      dispatch(fetchSongs())
       dispatch(fetchPlaylist(playlistId));
     }
   }, [playlistId, dispatch]);
@@ -80,7 +82,7 @@ const PlaylistShow = () => {
           {songs?.map((song) => (
             <div key={song.id} className="playlistSongObject">
               <p className="songTitle">{song.title}</p>
-              <p className="songArtist">{song.artist}</p>
+              {/* <p className="songArtist">{song.artist}</p> */}
             </div>
           ))}
           </div>

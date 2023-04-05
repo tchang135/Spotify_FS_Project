@@ -108,3 +108,11 @@
     color: #1ed760;
     font-size: 60px;
 }
+
+.playlistSongsList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 58vh;
+    left: 1vw;
+  }
