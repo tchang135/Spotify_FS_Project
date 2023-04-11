@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist } from "../../store/playlist";
 import { fetchSongs } from "../../store/song";
+import { deletePlaylistSong } from "../../store/playlistSong";
 import PlaylistEdit from "../PlaylistEdit";
 import './PlaylistShow.css';
 
@@ -35,7 +36,7 @@ const PlaylistShow = () => {
     }
   }, [playlistId, dispatch]);
 
-  const handleDelete = () => {
+  const handlePlaylistDelete = () => {
     if (window.confirm('Are you sure you want to delete this playlist?')) {
       dispatch(deletePlaylist(playlistId)).then(() => {
         history.push('/');
@@ -46,6 +47,10 @@ const PlaylistShow = () => {
   const handleEdit = () => {
     setEditMode(true);
     setDropdownOpen(false);
+  };
+
+  const handleSongDelete = (songId) => {
+    dispatch(deletePlaylistSong(playlistId, songId));
   };
 
   const toggleDropdown = () => {
@@ -73,7 +78,7 @@ const PlaylistShow = () => {
             </button>
             {dropdownOpen && (
               <div className="playlistDropdownContent">
-                <button className="playlistDeleteButton" onClick={handleDelete}>Delete</button>
+                <button className="playlistDeleteButton" onClick={handlePlaylistDelete}>Delete</button>
                 <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
               </div>
             )}
@@ -83,6 +88,7 @@ const PlaylistShow = () => {
             <div key={song.id} className="playlistSongObject">
               <p className="songTitle">{song.title}</p>
               {/* <p className="songArtist">{song.artist}</p> */}
+              <button className="deletePlaylistSong" onClick={handleSongDelete(song.id)}>Delete Song</button>
             </div>
           ))}
           </div>

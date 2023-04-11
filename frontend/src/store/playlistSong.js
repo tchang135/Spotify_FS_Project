@@ -38,7 +38,7 @@ export const createPlaylistSong = (playlistId, playlistSong) => async (dispatch)
 };
 
 export const deletePlaylistSong = (playlistId, playlistSongId) => async (dispatch) => {
-  const response = await fetch(`/api/playlists/${playlistId}/playlistSongs/${playlistSongId}`, {
+  const response = await fetch(`/api/playlists/${playlistId}/playlist_songs/${playlistSongId}`, {
     method: 'DELETE'
   });
   if (response.ok) {
