@@ -88,7 +88,7 @@ const PlaylistShow = () => {
             <div key={song.id} className="playlistSongObject">
               <p className="songTitle">{song.title}</p>
               {/* <p className="songArtist">{song.artist}</p> */}
-              <button className="deletePlaylistSong" onClick={handleSongDelete(song.id)}>Delete Song</button>
+              <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.songId)}>Delete Song</button>
             </div>
           ))}
           </div>
