@@ -37,14 +37,15 @@ export const createPlaylistSong = (playlistId, playlistSong) => async (dispatch)
   }
 };
 
-export const deletePlaylistSong = (playlistId, playlistSongId) => async (dispatch) => {
-  const response = await fetch(`/api/playlists/${playlistId}/playlist_songs/${playlistSongId}`, {
+export const deletePlaylistSong = (playlistId, songId) => async (dispatch) => {
+  const response = await fetch(`/api/playlists/${playlistId}/playlist_songs/${songId}`, {
     method: 'DELETE'
   });
   if (response.ok) {
-    dispatch(removePlaylistSong(playlistSongId));
+    dispatch(removePlaylistSong(songId));
   }
 };
+
 
 const playlistSongsReducer = (state = {}, action) => {
   const nextState = { ...state };

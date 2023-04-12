@@ -18,7 +18,6 @@ const rootReducer = combineReducers({
   currentSong: currentSongReducer,
   currentAlbum: currentAlbumReducer,
   playlists: playlistsReducer
-  // playlistSongs: playlistSongsReducer
 });
 
 
