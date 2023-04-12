@@ -26,19 +26,8 @@ class Song < ApplicationRecord
     has_many :playlist_songs, dependent: :destroy 
 
     has_many :playlists, 
-        through: :playlists_songs, 
+        through: :playlist_songs, 
         source: :playlist
-    
-    # has_many :playlist_songs,
-    #     primary_key: :id,
-    #     foreign_key: :song_id,
-    #     class_name: :PlaylistSong,
-    #     dependent: :destroy
-
-    # belongs_to :playlists,
-    #     through: :playlist_songs,
-    #     source: :playlist
-
     
 
 end

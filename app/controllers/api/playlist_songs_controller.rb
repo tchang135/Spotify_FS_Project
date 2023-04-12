@@ -14,8 +14,8 @@ class Api::PlaylistSongsController < ApplicationController
   
     def destroy
       playlist = Playlist.find(params[:playlist_id])
-      playlist_song = playlist.playlist_songs.find_by(song_id: params[:song_id])
-    
+      playlist_song = playlist.playlist_songs.find_by(id: params[:id])
+
       if playlist_song
         playlist_song.destroy
         head :no_content
@@ -23,7 +23,6 @@ class Api::PlaylistSongsController < ApplicationController
         render json: { error: 'Playlist Song not found' }, status: :not_found
       end
     end
-    
   
     private
   
