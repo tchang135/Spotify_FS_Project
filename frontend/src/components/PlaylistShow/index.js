@@ -50,8 +50,12 @@ const PlaylistShow = () => {
   };
 
   const handleSongDelete = (songId) => {
-    dispatch(deletePlaylistSong(playlistId, songId.toString()));
+    const playlistSong = playlistSongs.find(
+      (playlistSong) => playlistSong.songId === songId
+    );
+    dispatch(deletePlaylistSong(playlistId, playlistSong.id.toString()));
   };
+  
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
