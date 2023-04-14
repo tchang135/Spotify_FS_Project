@@ -115,4 +115,17 @@
     position: absolute;
     top: 58vh;
     left: 1vw;
-  }
+}
+
+.playlistSongObject {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.deletePlaylistSong {
+  color: white;
+  display: flex;
+  white-space: nowrap;
+  margin-left: 600px;
+}
