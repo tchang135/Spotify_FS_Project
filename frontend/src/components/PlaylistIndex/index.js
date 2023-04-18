@@ -6,9 +6,13 @@ import { fetchPlaylists } from "../../store/playlist";
 import './PlaylistIndex.css'
 
 const PlaylistIndex = () => {
-    const playlists = useSelector((state) => Object.values(state.playlists));
-    const dispatch = useDispatch();
-  
+   const playlists = useSelector((state) => state.playlists);
+   const playlistsArr = Object.entries(playlists)
+     .filter(([key, value]) => key !== "show_playlist")
+     .map(([key, value]) => value);
+   const dispatch = useDispatch();
+
+
     useEffect(() => {
       dispatch(fetchPlaylists());
     }, []);
@@ -16,7 +20,7 @@ const PlaylistIndex = () => {
   
     return (
       <div className="allPlaylists">
-        {playlists.map((playlist) => (
+        {playlistsArr.map((playlist) => (
           <div key={playlist?.id} className="playlistIndexItemContainer">
             <Link className="playlistIndexItem" to={`/playlists/${playlist.id}`}>
               {playlist.title}
