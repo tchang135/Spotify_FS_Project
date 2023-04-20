@@ -50,7 +50,6 @@
 
   .resultSongItem {
     display: flex;
-    /* justify-content: left; */
     margin-bottom: 20px;
     align-items: center;
     justify-content: left;
@@ -69,7 +68,6 @@
 
   .resultAlbumItem {
     display: flex;
-    /* justify-content: left; */
     margin-bottom: 20px;
     align-items: center;
     justify-content: left;
@@ -98,5 +96,6 @@
 
   #resultArtist {
     color: white;
-    margin-left: 50px;;
+    position: absolute;
+    left: 30vw;
   }
