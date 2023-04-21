@@ -17,9 +17,9 @@ const PlaylistIndex = () => {
       dispatch(fetchPlaylists());
     }, []);
 
-    useEffect(() => {
-      console.log("playlists changed:", playlists);
-    }, [playlists]);
+    // useEffect(() => {
+    //   console.log("playlists changed:", playlists);
+    // }, [playlists]);
 
   
     return (

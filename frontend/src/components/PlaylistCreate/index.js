@@ -1,9 +1,12 @@
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchPlaylists } from "../../store/playlist";
 
 const CreatePlaylistButton = () => {
   const currentUser = useSelector((state) => state.session.user);
+  const playlists = useSelector((state) => state.playlists);
   const history = useHistory();
+  const dispatch = useDispatch()
 
   
 
@@ -29,7 +32,8 @@ const CreatePlaylistButton = () => {
       }
 
       const playlist = await response.json();
-      history.push(`/playlists/${playlist.id}`);;
+      history.push(`/playlists/${playlist.id}`);
+      dispatch(fetchPlaylists());
     } catch (error) {
       console.error(error);
      
