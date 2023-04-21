@@ -17,6 +17,10 @@ const PlaylistIndex = () => {
       dispatch(fetchPlaylists());
     }, []);
 
+    useEffect(() => {
+      console.log("playlists changed:", playlists);
+    }, [playlists]);
+
   
     return (
       <div className="allPlaylists">
