@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPlaylist, deletePlaylist } from "../../store/playlist";
+import { fetchPlaylist, deletePlaylist, fetchPlaylists } from "../../store/playlist";
 import { fetchSongs } from "../../store/song";
 import { deletePlaylistSong } from "../../store/playlistSong";
 import PlaylistEdit from "../PlaylistEdit";
@@ -39,6 +39,7 @@ const PlaylistShow = () => {
   const handlePlaylistDelete = () => {
     if (window.confirm('Are you sure you want to delete this playlist?')) {
       dispatch(deletePlaylist(playlistId)).then(() => {
+        dispatch(fetchPlaylists());
         history.push('/');
       });
     }
