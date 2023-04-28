@@ -55,6 +55,7 @@ const PlaylistShow = () => {
       (playlistSong) => playlistSong.songId === songId
     );
     dispatch(deletePlaylistSong(playlistId, playlistSong.id.toString()));
+    dispatch(fetchPlaylist(playlistId))
   };
   
 
