@@ -1,3 +1,58 @@
+.editingPlaylistHeader {
+    font-size: 36px;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.editTitleSection {
+    position: relative;
+    top: 10vh;
+    display: grid;
+}
+
+.editTitleHeader {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.editDescriptionSection {
+    position: relative;
+    top: 17vh;
+    display: grid;
+}
+
+.editDescriptionHeader {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.descriptionTextBox {
+    resize: none;
+}
+
+.editPublicSection {
+    position: relative;
+    top: 24vh;
+    display: grid;
+}
+
+.editPublicHeader {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.submitEditSection {
+    position: relative;
+    top: 40vh;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.publicButton {
+    margin-right: 3vw;
+}
+
 .cancelEditPlaylist {
     color: white;
 }

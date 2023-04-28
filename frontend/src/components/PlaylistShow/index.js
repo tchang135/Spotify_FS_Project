@@ -78,8 +78,8 @@ const PlaylistShow = () => {
             <p className="newPlaylistDescription">{playlist?.description}</p>
           </div>
           <div className="playlistDropdownContainer">
+            <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
             <button className="playlistDropdownButton" onClick={toggleDropdown}>
-              <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
               <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
             </button>
             {dropdownOpen && (
