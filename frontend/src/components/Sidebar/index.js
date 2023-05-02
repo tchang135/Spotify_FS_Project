@@ -1,5 +1,4 @@
 import { useHistory, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import InvertLogo from '../images/InvertLogo.jpeg';
 import CreatePlaylistButton from "../PlaylistCreate";
 import PlaylistIndex from "../PlaylistIndex";
@@ -10,7 +9,7 @@ const Sidebar = () => {
     const location = useLocation();
     const history = useHistory();
 
-    
+
 
 
     if (location.pathname === '/signup' || location.pathname === '/login') {

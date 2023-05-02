@@ -15,7 +15,7 @@ const PlaylistIndex = () => {
 
     useEffect(() => {
       dispatch(fetchPlaylists());
-    }, []);
+    }, [dispatch]);
 
   
     return (

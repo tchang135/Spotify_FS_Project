@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchPlaylists } from "../../store/playlist";
 
 const CreatePlaylistButton = () => {
-  const currentUser = useSelector((state) => state.session.user);
-  const playlists = useSelector((state) => state.playlists);
+  const currentUser = useSelector((state) => state.session.user)
   const history = useHistory();
   const dispatch = useDispatch()
 

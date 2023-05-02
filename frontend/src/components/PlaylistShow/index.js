@@ -96,7 +96,7 @@ const PlaylistShow = () => {
           {songs?.map((song) => (
             <div key={song.id} className="playlistSongObject">
               {Object.values(albums).map((album) => (
-                album.id === song.albumId && <img key={album.id} src={album.photoUrl} className="playlistSongPhoto"/>
+                album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
               ))}
               <p className="songTitle">{song.title}</p>
               {/* <p className="songArtist">{song.artist}</p> */}
