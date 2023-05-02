@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist, fetchPlaylists } from "../../store/playlist";
+import { fetchAlbums } from "../../store/album";
 import { fetchSongs } from "../../store/song";
 import { deletePlaylistSong } from "../../store/playlistSong";
 import PlaylistEdit from "../PlaylistEdit";
@@ -10,6 +11,7 @@ import './PlaylistShow.css';
 const PlaylistShow = () => {
   const { playlistId } = useParams();
   const dispatch = useDispatch();
+  const albums = useSelector((state) => state.albums);
   const playlist = useSelector((state) => state.playlists.show_playlist);
   const playlistSongs = useSelector((state) => state.playlists.show_playlist?.playlistSongs);
   const playlistSongIds = playlistSongs?.map((playlistSong) => playlistSong?.songId);
@@ -33,6 +35,7 @@ const PlaylistShow = () => {
     if (playlistId) {
       dispatch(fetchSongs())
       dispatch(fetchPlaylist(playlistId));
+      dispatch(fetchAlbums())
     }
   }, [playlistId, dispatch]);
 
@@ -92,6 +95,9 @@ const PlaylistShow = () => {
           <div className="playlistSongsList">
           {songs?.map((song) => (
             <div key={song.id} className="playlistSongObject">
+              {Object.values(albums).map((album) => (
+                album.id === song.albumId && <img key={album.id} src={album.photoUrl} className="playlistSongPhoto"/>
+              ))}
               <p className="songTitle">{song.title}</p>
               {/* <p className="songArtist">{song.artist}</p> */}
               <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.id)}>Delete Song</button>

@@ -123,6 +123,12 @@
   margin-bottom: 30px;
 }
 
+.playlistSongPhoto {
+  height: 5vh;
+  width: 3vw;
+  margin-right: 1vw;
+}
+
 .deletePlaylistSong {
   color: white;
   display: flex;
