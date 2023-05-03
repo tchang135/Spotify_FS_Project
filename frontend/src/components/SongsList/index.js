@@ -83,7 +83,7 @@ const SongList = () => {
                   <option key={playlist.id} value={playlist.id}>{playlist?.title}</option>
                 ))}
               </select>
-              <button onClick={() => handleAddSongToPlaylist(songs[0].id)}>Add to Playlist</button>
+              <button onClick={() => handleAddSongToPlaylist(song.id)}>Add to Playlist</button>
             </div>
           </div>
         ))}
