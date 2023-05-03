@@ -29,7 +29,8 @@ const PlaylistShow = () => {
 
   const history = useHistory();
   const [editMode, setEditMode] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [playlistDropdownOpen, setPlaylistDropdownOpen] = useState(false);
+  const [songDropdownOpen, setSongDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (playlistId) {
@@ -50,7 +51,8 @@ const PlaylistShow = () => {
 
   const handleEdit = () => {
     setEditMode(true);
-    setDropdownOpen(false);
+    setPlaylistDropdownOpen(false);
+    setSongDropdownOpen(false);
   };
 
   const handleSongDelete = (songId) => {
@@ -62,9 +64,13 @@ const PlaylistShow = () => {
   };
   
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const togglePlaylistDropdown = () => {
+    setPlaylistDropdownOpen(!playlistDropdownOpen);
   };
+
+  const toggleSongDropdown = () => {
+    setSongDropdownOpen(!songDropdownOpen)
+  }
 
   if (!playlistId) {
     return <div>Loading...</div>;
@@ -82,10 +88,10 @@ const PlaylistShow = () => {
           </div>
           <div className="playlistDropdownContainer">
             <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
-            <button className="playlistDropdownButton" onClick={toggleDropdown}>
+            <button className="playlistDropdownButton" onClick={togglePlaylistDropdown}>
               <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
             </button>
-            {dropdownOpen && (
+            {playlistDropdownOpen && (
               <div className="playlistDropdownContent">
                 <button className="playlistDeleteButton" onClick={handlePlaylistDelete}>Delete</button>
                 <button className="playlistEditButton" onClick={handleEdit}>Edit</button>
@@ -100,7 +106,14 @@ const PlaylistShow = () => {
               ))}
               <p className="songTitle">{song.title}</p>
               {/* <p className="songArtist">{song.artist}</p> */}
-              <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.id)}>Delete Song</button>
+              <div className="songDropdownContainer">
+                <button className="playlistDropdownButton" onClick={toggleSongDropdown}>
+                  <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+                </button>
+                {songDropdownOpen && (
+                  <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.id)}>Delete Song</button>
+                )}
+              </div>
             </div>
           ))}
           </div>
