@@ -29,8 +29,30 @@ export const fetchPlaylist = (playlistId) => async (dispatch) => {
     return dispatch(receivePlaylist(data));
 };
 
+export const createPlaylist = (currentUser, history) => async (dispatch) => {
+    const response = await fetch("/api/playlists", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${currentUser.token}`,
+      },
+      body: JSON.stringify({
+        playlist: {
+          title: "New Playlist",
+          description: "Fill out a description here",
+          public: true,
+        }
+      })
+    })
+
+    if (response.ok) {
+      const playlist = await response.json();
+      dispatch(receivePlaylist(playlist));
+      history.push(`/playlists/${playlist.id}`);
+    }
+}
+
 export const editPlaylist = (playlistId, formData) => async (dispatch) => {
-    debugger
     const response = await fetch(`/api/playlists/${playlistId}`, {
       method: 'PATCH',
       headers: {
@@ -38,7 +60,6 @@ export const editPlaylist = (playlistId, formData) => async (dispatch) => {
       },
       body: JSON.stringify(formData)
     });
-    debugger
     if (response.ok) {
         const data = await response.json();
         dispatch(receivePlaylist(data));
