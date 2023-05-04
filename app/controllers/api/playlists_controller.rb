@@ -1,4 +1,5 @@
 class Api::PlaylistsController < ApplicationController
+    before_action :require_logged_in
     skip_before_action :verify_authenticity_token
     def index
         @playlists = Playlist.all 
