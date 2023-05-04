@@ -30,7 +30,6 @@ const PlaylistShow = () => {
   const history = useHistory();
   const [editMode, setEditMode] = useState(false);
   const [playlistDropdownOpen, setPlaylistDropdownOpen] = useState(false);
-  const [songDropdownOpen, setSongDropdownOpen] = useState(false);
   const [selectedSongId, setSelectedSongId] = useState(null);
 
   useEffect(() => {
@@ -43,17 +42,15 @@ const PlaylistShow = () => {
 
   const handlePlaylistDelete = () => {
     if (window.confirm('Are you sure you want to delete this playlist?')) {
-      dispatch(deletePlaylist(playlistId)).then(() => {
+      dispatch(deletePlaylist(playlistId))
         dispatch(fetchPlaylists());
         history.push('/');
-      });
     }
   };
 
   const handleEdit = () => {
     setEditMode(true);
     setPlaylistDropdownOpen(false);
-    setSongDropdownOpen(false);
   };
 
   const handleSongDelete = (songId) => {
