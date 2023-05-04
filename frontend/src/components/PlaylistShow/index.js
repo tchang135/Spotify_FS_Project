@@ -31,6 +31,7 @@ const PlaylistShow = () => {
   const [editMode, setEditMode] = useState(false);
   const [playlistDropdownOpen, setPlaylistDropdownOpen] = useState(false);
   const [songDropdownOpen, setSongDropdownOpen] = useState(false);
+  const [selectedSongId, setSelectedSongId] = useState(null);
 
   useEffect(() => {
     if (playlistId) {
@@ -68,9 +69,13 @@ const PlaylistShow = () => {
     setPlaylistDropdownOpen(!playlistDropdownOpen);
   };
 
-  const toggleSongDropdown = () => {
-    setSongDropdownOpen(!songDropdownOpen)
-  }
+  const toggleSongDropdown = (songId) => {
+    if (selectedSongId === songId) {
+      setSelectedSongId(null);
+    } else {
+      setSelectedSongId(songId);
+    }
+  };
 
   if (!playlistId) {
     return <div>Loading...</div>;
@@ -99,23 +104,24 @@ const PlaylistShow = () => {
             )}
           </div>
           <div className="playlistSongsList">
-          {songs?.map((song) => (
-            <div key={song.id} className="playlistSongObject">
-              {Object.values(albums).map((album) => (
-                album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
-              ))}
-              <p className="songTitle">{song.title}</p>
-              {/* <p className="songArtist">{song.artist}</p> */}
-              <div className="songDropdownContainer">
-                <button className="playlistDropdownButton" onClick={toggleSongDropdown}>
-                  <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
-                </button>
-                {songDropdownOpen && (
-                  <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.id)}>Delete Song</button>
-                )}
+          {songs?.map((song) => {
+            return (
+              <div key={song.id} className="playlistSongObject">
+                {Object.values(albums).map((album) => (
+                  album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
+                ))}
+                <p className="songTitle">{song.title}</p>
+                <div className="songDropdownContainer">
+                  <button className="playlistDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
+                    <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+                  </button>
+                  {selectedSongId === song.id && (
+                    <button className="deletePlaylistSong" onClick={() => handleSongDelete(song)}>Delete Song</button>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
           </div>
         </>
       )}
