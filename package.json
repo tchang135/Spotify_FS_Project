@@ -5,6 +5,7 @@
   "directories": {
     "lib": "lib"
   },
+
   "scripts": {
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -25,5 +26,7 @@
   "dependencies": {
     "react-h5-audio-player": "^3.8.6",
     "react-select": "^5.7.2"
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {}
 }

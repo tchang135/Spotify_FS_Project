@@ -11,9 +11,9 @@ function AlbumItem( { album } ) {
     const history = useHistory(); 
     const dispatch = useDispatch();
     const artist = useSelector(state => {
-        // debugger
+
         if (state.artist) {
-            // debugger
+    
             return state.artist[album.artistId] 
         }  else { 
             return null
@@ -25,13 +25,11 @@ function AlbumItem( { album } ) {
         dispatch(fetchAlbum(album.id))
     }, [dispatch])
 
-    // debugger
     // const [artist, setArtist] = useState("");
     if (!artist) {
         return null
     }
 
-    // debugger
 
     return (
         <div onClick={(e) => history.push(`/albums/${album.id}`)}>
