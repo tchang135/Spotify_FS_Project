@@ -3,6 +3,7 @@
     height: 85%; 
     color: white;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* .playlistTopColor {
@@ -134,7 +135,7 @@
     display: block;
     position: relative;
     top: 62vh;
-    left: -67vw;
+    left: -65vw;
 }
 
 .playlistSongObject {

@@ -10,8 +10,10 @@ import './PlaylistShow.css';
 
 const PlaylistShow = () => {
   const { playlistId } = useParams();
+  const allSongs = useSelector((state) => state.songs)
   const dispatch = useDispatch();
   const albums = useSelector((state) => state.albums);
+  const artists = useSelector((state) => state.artist)
   const playlist = useSelector((state) => state.playlists.show_playlist);
   const playlistSongs = useSelector((state) => state.playlists.show_playlist?.playlistSongs);
   const playlistSongIds = playlistSongs?.map((playlistSong) => playlistSong?.songId);
@@ -32,6 +34,28 @@ const PlaylistShow = () => {
   const [playlistDropdownOpen, setPlaylistDropdownOpen] = useState(false);
   const [selectedSongId, setSelectedSongId] = useState(null);
 
+  const getAlbumById = (id) => {
+    return Object.values(albums).find((album) => album.id === id);
+  };
+
+  const getAlbumsForHeaderPhoto = (allSongs) => {
+    const albumsForSongs = [];
+    for (let i = 0; i < songs.length; i++) {
+      const album = getAlbumById(songs[i].albumId);
+      if (album && !albumsForSongs.includes(album)) {
+        albumsForSongs.push(album);
+      }
+      if (albumsForSongs.length === 4) {
+        break;
+      }
+    }
+    if (albumsForSongs.length === 4) {
+      return albumsForSongs;
+    } else {
+      return [albumsForSongs[0]];
+    }
+  };
+  
   useEffect(() => {
     if (playlistId) {
       dispatch(fetchSongs())
@@ -86,11 +110,9 @@ const PlaylistShow = () => {
       ) : (
         <>
           <div className="playlistTopColor">
-            {/* {songs?.map((song) => {
-              {Object.values(albums).map((album) => (
-                album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistHeaderPhoto"/>
-              ))}
-            })} */}
+            {getAlbumsForHeaderPhoto(allSongs).map((album) => (
+              <img key={album.id} src={album.photoUrl} alt="" className="playlistTopPhoto"/>
+            ))}
             <h1 className="newPlaylistTitle">{playlist?.title}</h1>
             <p className="newPlaylistDescription">{playlist?.description}</p>
           </div>
@@ -115,6 +137,9 @@ const PlaylistShow = () => {
                   album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
                 ))}
                 <p className="songTitle">{song.title}</p>
+                {Object.values(artists).map((artist) => (
+                  artist.id === song.artistId && <p className="playlistSongArtist">{artist.name}</p>
+                ))}
                 <div className="songDropdownContainer">
                   <button className="playlistDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
                     <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
