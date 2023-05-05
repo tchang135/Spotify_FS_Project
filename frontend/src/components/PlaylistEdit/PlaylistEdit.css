@@ -1,7 +1,13 @@
+.playlistEditForm {
+    height: 100%;
+    margin-left: 20vw;
+    margin-top: 5vh;
+}
+
 .editingPlaylistHeader {
     font-size: 36px;
     overflow-y: scroll;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .editTitleSection {
@@ -24,10 +30,6 @@
 .editDescriptionHeader {
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-.descriptionTextBox {
-    resize: none;
 }
 
 .editPublicSection {
@@ -67,4 +69,15 @@
 
 .submitEditPlaylist:hover {
     cursor: pointer;
+}
+
+.editTitleBox {
+    height: 4vh;
+    width: 30vw;
+}
+
+.editDescriptionBox {
+    height: 10vh;
+    width: 40vw;
+    resize: none;
 }

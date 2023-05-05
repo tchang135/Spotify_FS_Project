@@ -39,7 +39,7 @@
     width: 87%;
   }
   
-  #songItem {
+  .playlistSongWords{
     display: flex;
     flex-direction: column;
     width: 87%;
@@ -47,11 +47,22 @@
     padding-top: 8px;
   }
 
+  #songItem {
+    display: flex;
+    width: 74vw;
+  }
+
   #songItem:hover {
     cursor: pointer;
     background-color: rgba(123, 123, 123, 0.425);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    height: fit-content;
+  }
+
+  #albumShowArtistName {
+    color: grey;
+    font-size: 15px;
   }
   
   #albumShowSongTitle {
@@ -62,4 +73,9 @@
   #albumShowArtistName {
     margin-bottom: 15px;
     padding-left: 10px;
+  }
+
+  #playlistDropdownSongButton {
+    margin-top: 2vh;
+    margin-left: 12vh;
   }

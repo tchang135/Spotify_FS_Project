@@ -86,6 +86,11 @@ const PlaylistShow = () => {
       ) : (
         <>
           <div className="playlistTopColor">
+            {/* {songs?.map((song) => {
+              {Object.values(albums).map((album) => (
+                album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistHeaderPhoto"/>
+              ))}
+            })} */}
             <h1 className="newPlaylistTitle">{playlist?.title}</h1>
             <p className="newPlaylistDescription">{playlist?.description}</p>
           </div>

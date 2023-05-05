@@ -83,11 +83,13 @@ const SongList = () => {
         <div className="songList">
         {songs.map((song) => (
           <div id="songItem" key={song.url} onClick={() => handleSongClick(song.url)}>
-            <p id="albumShowSongTitle">{song.title}</p>
-            <p id="albumShowArtistName">{artist.name}</p>
+            <div className="playlistSongWords">
+              <p id="albumShowSongTitle">{song.title}</p>
+              <p id="albumShowArtistName">{artist.name}</p>
+            </div>
             <div className="playlistDropdown">
               <button className="playlistDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
-                <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+                <i id="playlistDropdownSongButton" class="fa-solid fa-ellipsis"></i>
               </button>
               {selectedSongId === song.id && (
                 <div>

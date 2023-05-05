@@ -32,6 +32,7 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
           <label htmlFor="title" className="editTitleHeader">Title</label>
           <input
             type="text"
+            className="editTitleBox"
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -40,7 +41,7 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
         <div className="editDescriptionSection">
           <label htmlFor="description" className="editDescriptionHeader">Description</label>
           <textarea
-            className="descriptionTextBox"
+            className="editDescriptionBox"
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
