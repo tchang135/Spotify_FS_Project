@@ -20,7 +20,7 @@ export const removePlaylist = (playlistId) => ({
 export const fetchPlaylists = () => async dispatch => {
     const response = await fetch(`/api/playlists`);
     const data = await response.json();
-    return dispatch(receivePlaylists(data))
+    dispatch(receivePlaylists(data))
 }
 
 export const fetchPlaylist = (playlistId) => async (dispatch) => {
@@ -73,7 +73,8 @@ export const deletePlaylist = (playlistId) => async (dispatch) => {
   });
 
   if (response.ok) {
-    dispatch(removePlaylist(playlistId));
+    const id = await response.json();
+    dispatch(removePlaylist(id));
   }
 };
 

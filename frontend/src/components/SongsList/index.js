@@ -9,6 +9,7 @@ import './SongsList.css'
 const SongList = () => {
     const { albumId } = useParams();
     const [selectedPlaylistId, setSelectedPlaylistId] = useState(null);
+    const [selectedSongId, setSelectedSongId] = useState(null);
     const playlists = useSelector(state => state.playlists);
     const dispatch = useDispatch();
     const album = useSelector(state => {
@@ -57,6 +58,14 @@ const SongList = () => {
     dispatch(createPlaylistSong(playlistSong.playlist_id, playlistSong));
     setSelectedPlaylistId(null);
   };
+
+  const toggleSongDropdown = (songId) => {
+    if (selectedSongId === songId) {
+      setSelectedSongId(null);
+    } else {
+      setSelectedSongId(songId);
+    }
+  };
   
 
     if (!songs || !artist) {
@@ -76,14 +85,21 @@ const SongList = () => {
           <div id="songItem" key={song.url} onClick={() => handleSongClick(song.url)}>
             <p id="albumShowSongTitle">{song.title}</p>
             <p id="albumShowArtistName">{artist.name}</p>
-            <div className="playlist-dropdown">
-              <select value={selectedPlaylistId} onChange={(e) => setSelectedPlaylistId(e.target.value)}>
-                <option value="">Select a playlist</option>
-                {Object.values(playlists).map((playlist) => (
-                  <option key={playlist.id} value={playlist.id}>{playlist?.title}</option>
-                ))}
-              </select>
-              <button onClick={() => handleAddSongToPlaylist(song.id)}>Add to Playlist</button>
+            <div className="playlistDropdown">
+              <button className="playlistDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
+                <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+              </button>
+              {selectedSongId === song.id && (
+                <div>
+                  <select value={selectedPlaylistId} onChange={(e) => setSelectedPlaylistId(e.target.value)}>
+                    <option value="">Select a playlist</option>
+                    {Object.values(playlists).map((playlist) => (
+                      <option key={playlist.id} value={playlist.id}>{playlist?.title}</option>
+                    ))}
+                  </select>
+                  <button onClick={() => handleAddSongToPlaylist(song.id)}>Add to Playlist</button>
+                </div>
+              )}
             </div>
           </div>
         ))}

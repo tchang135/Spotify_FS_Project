@@ -42,9 +42,10 @@ const PlaylistShow = () => {
 
   const handlePlaylistDelete = () => {
     if (window.confirm('Are you sure you want to delete this playlist?')) {
-      dispatch(deletePlaylist(playlistId))
+      dispatch(deletePlaylist(playlistId)).then(() => {
         dispatch(fetchPlaylists());
         history.push('/');
+      });
     }
   };
 
