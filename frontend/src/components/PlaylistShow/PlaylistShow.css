@@ -1,6 +1,6 @@
 .newPlaylistPage {
     position: relative;
-    height: 100%; 
+    height: 85%; 
     color: white;
     overflow-y: scroll;
 }
