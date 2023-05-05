@@ -78,7 +78,7 @@ const SongList = () => {
         <div className="bigPlayButtonAlbum"key={songs[0].url} onClick={() => handleSongClick(songs[0].url)}>
           <i class="fa-solid fa-circle-play"></i>
         </div>
-        <h1 className="titleHeader">TITLE</h1>
+        <h1 className="songlistTitleHeader">TITLE</h1>
       
         <div className="songList">
         {songs.map((song) => (

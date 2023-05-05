@@ -5,13 +5,34 @@
     color: white;
 }
 
-.playlistTopColor {
+/* .playlistTopColor {
     position: absolute;
     top: 40px;
     left: 250px;
     background-image: linear-gradient(rgba(164, 94, 94, 0.5),rgba(102, 44, 44, 0.5), rgba(40, 14, 14, 0.5));
     height: 45%;
     width: 95%;
+} */
+
+.playlistSongTitleHeader {
+  color: rgb(171, 169, 169);
+  font-size: 12px;
+  position: relative;
+  top: 55vh;
+  left: -1vw;
+  width: 87%;
+  display: inline-block; 
+  padding-bottom: 10px; 
+}
+
+.playlistSongTitleHeader::before {
+  content: "";
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 87%;
+  height: 1px;
+  background-color: rgba(72, 72, 72, 0.529); 
 }
 
 #dropdownPlaylist {
@@ -106,7 +127,7 @@
 #bigPlayButtonPlaylist {
     margin-right: 40px;
     color: #1ed760;
-    font-size: 60px;
+    font-size: 70px;
 }
 
 .playlistSongsList {

@@ -101,6 +101,7 @@ const PlaylistShow = () => {
               </div>
             )}
           </div>
+          <h1 className="playlistSongTitleHeader">TITLE</h1>
           <div className="playlistSongsList">
           {songs?.map((song) => {
             return (
