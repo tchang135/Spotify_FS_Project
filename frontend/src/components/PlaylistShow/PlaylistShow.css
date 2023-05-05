@@ -6,14 +6,23 @@
     overflow-x: hidden;
 }
 
-/* .playlistTopColor {
-    position: relative;
-    top: 40px;
-    left: 250px;
-    background-image: linear-gradient(rgba(164, 94, 94, 0.5),rgba(102, 44, 44, 0.5), rgba(40, 14, 14, 0.5));
-    height: 45%;
-    width: 95%;
-} */
+.playlistHeaderSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 15vh;
+  height: 45%;
+  width: 95%;
+}
+
+.playlistHeaderPhotos {
+  position: relative;
+  margin-right: 7vw;
+}
+
+.playlistHeadingWords {
+  position: relative;
+}
 
 .playlistSongTitleHeader {
   color: rgb(171, 169, 169);
@@ -96,7 +105,6 @@
     position: relative;
     display: flex;
     top: 20vh;
-    left: 38vw;
     font-size: 60px;
     font-weight: bold;
     color: white;
@@ -106,7 +114,6 @@
     position: relative;
     display: flex;
     top: 33vh;
-    left: 38vw;
 }
 
 .playlistEditButton {

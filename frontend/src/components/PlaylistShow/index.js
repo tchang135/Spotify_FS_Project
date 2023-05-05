@@ -109,12 +109,16 @@ const PlaylistShow = () => {
         <PlaylistEdit playlistId={playlistId} setEditMode={setEditMode} />
       ) : (
         <>
-          <div className="playlistTopColor">
-            {getAlbumsForHeaderPhoto(allSongs).map((album) => (
-              <img key={album.id} src={album.photoUrl} alt="" className="playlistTopPhoto"/>
-            ))}
-            <h1 className="newPlaylistTitle">{playlist?.title}</h1>
-            <p className="newPlaylistDescription">{playlist?.description}</p>
+          <div className="playlistHeaderSection">
+            <div className="playlistHeaderPhotos">
+              {getAlbumsForHeaderPhoto(allSongs).map((album) => (
+                album && <img key={album.id} src={album.photoUrl} alt="" className="playlistHeaderPhotoObject"/>
+              ))}
+            </div>
+            <div className="playlistHeadingWords">
+              <h1 className="newPlaylistTitle">{playlist?.title}</h1>
+              <p className="newPlaylistDescription">{playlist?.description}</p>
+            </div>
           </div>
           <div className="playlistDropdownContainer">
             <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
