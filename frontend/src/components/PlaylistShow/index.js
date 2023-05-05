@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist, fetchPlaylists } from "../../store/playlist";
 import { fetchAlbums } from "../../store/album";
+import { setCurrentSong } from "../../store/currentSong";
 import { fetchSongs } from "../../store/song";
 import { deletePlaylistSong } from "../../store/playlistSong";
 import PlaylistEdit from "../PlaylistEdit";
@@ -85,8 +86,11 @@ const PlaylistShow = () => {
     dispatch(deletePlaylistSong(playlistId, playlistSong.id.toString()));
     dispatch(fetchPlaylist(playlistId))
   };
-  
 
+  const handleSongPlay = (songId) => {
+    dispatch(setCurrentSong(songId));
+  };
+  
   const togglePlaylistDropdown = () => {
     setPlaylistDropdownOpen(!playlistDropdownOpen);
   };
@@ -121,7 +125,7 @@ const PlaylistShow = () => {
             </div>
           </div>
           <div className="playlistDropdownContainer">
-            <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play"></i>
+            <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play" key={songs[0].url} onClick={() => handleSongPlay(songs[0].url)}></i>
             <button className="playlistDropdownButton" onClick={togglePlaylistDropdown}>
               <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
             </button>

@@ -9,26 +9,38 @@
 .playlistHeaderSection {
   position: relative;
   display: flex;
-  justify-content: center;
-  top: 15vh;
-  height: 45%;
+  /* justify-content: center;
+   */
+  height: 50%;
   width: 95%;
 }
 
 .playlistHeaderPhotos {
-  position: relative;
-  margin-right: 7vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 20vw;
+  /* margin-top: vh; */
+  padding-left: 4vw;
+  padding-top: 14.5vh;
+  margin-left: 20vw;
+  
+}
+
+.playlistHeaderPhotoObject {
+  width: 8vw;
+  height: 14vh;
 }
 
 .playlistHeadingWords {
   position: relative;
+  margin-left: 4vw;
 }
 
 .playlistSongTitleHeader {
   color: rgb(171, 169, 169);
   font-size: 12px;
   position: relative;
-  top: 55vh;
+  top: 25vh;
   left: 12.5vw;
   width: 87%;
   display: inline-block; 
@@ -52,7 +64,7 @@
 .playlistDropdownContainer {
     position: relative;
     display: inline-block;
-    top: 48vh;
+    top: 15vh;
     left: 20vw;
   }
   
@@ -104,16 +116,16 @@
 .newPlaylistTitle {
     position: relative;
     display: flex;
-    top: 20vh;
     font-size: 60px;
     font-weight: bold;
     color: white;
+    margin-top: 25vh;
 }
 
 .newPlaylistDescription {
     position: relative;
     display: flex;
-    top: 33vh;
+    margin-top: 8vh;
 }
 
 .playlistEditButton {
@@ -141,7 +153,7 @@
 .playlistSongsList {
     display: block;
     position: relative;
-    top: 62vh;
+    top: 32vh;
     left: -65vw;
 }
 
