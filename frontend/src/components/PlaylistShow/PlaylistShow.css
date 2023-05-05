@@ -131,10 +131,10 @@
 }
 
 .playlistSongsList {
-    display: flex;
+    display: block;
     position: relative;
     top: 62vh;
-    margin-left: 22vw;
+    left: -67vw;
 }
 
 .playlistSongObject {
