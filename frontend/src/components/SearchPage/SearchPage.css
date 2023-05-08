@@ -1,4 +1,8 @@
 
+.searchResultContainer {
+  overflow-y: scroll;
+}
+
 .searchBarField {
     position: fixed;
     z-index: 10;
@@ -16,9 +20,8 @@
     top: 10%;
     left: 20%;
     justify-content: left;
-    height: 100%;
+    height: fit-content;
     width: 80%;
-    overflow-y: scroll;
   }
 
   .songsHeader {
@@ -27,6 +30,7 @@
     font-size: 32px;
     font-weight: bold;
     color: white;
+    height: fit;
   }
 
   .albumsHeader {
