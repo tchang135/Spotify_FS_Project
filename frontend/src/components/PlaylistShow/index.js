@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlaylist, deletePlaylist, fetchPlaylists } from "../../store/playlist";
 import { fetchAlbums } from "../../store/album";
+import { fetchArtists } from "../../store/artist";
 import { setCurrentSong } from "../../store/currentSong";
 import { fetchSongs } from "../../store/song";
 import { deletePlaylistSong } from "../../store/playlistSong";
@@ -59,9 +60,10 @@ const PlaylistShow = () => {
   
   useEffect(() => {
     if (playlistId) {
-      dispatch(fetchSongs())
+      dispatch(fetchSongs());
       dispatch(fetchPlaylist(playlistId));
-      dispatch(fetchAlbums())
+      dispatch(fetchAlbums());
+      dispatch(fetchArtists())
     }
   }, [playlistId, dispatch]);
 
@@ -125,7 +127,7 @@ const PlaylistShow = () => {
             </div>
           </div>
           <div className="playlistDropdownContainer">
-            <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play" key={songs[0].url} onClick={() => handleSongPlay(songs[0].url)}></i>
+            <i id="bigPlayButtonPlaylist" class="fa-solid fa-circle-play" key={songs[0]?.url} onClick={() => handleSongPlay(songs[0].url)}></i>
             <button className="playlistDropdownButton" onClick={togglePlaylistDropdown}>
               <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
             </button>
@@ -144,13 +146,13 @@ const PlaylistShow = () => {
                 {Object.values(albums).map((album) => (
                   album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
                 ))}
-                <p className="songTitle">{song.title}</p>
+                <p className="playlistSongTitle">{song.title}</p>
                 {Object.values(artists).map((artist) => (
                   artist.id === song.artistId && <p className="playlistSongArtist">{artist.name}</p>
                 ))}
                 <div className="songDropdownContainer">
-                  <button className="playlistDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
-                    <i id="dropdownPlaylist" class="fa-solid fa-ellipsis"></i>
+                  <button className="songDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
+                    <i class="fa-solid fa-ellipsis"></i>
                   </button>
                   {selectedSongId === song.id && (
                     <button className="deletePlaylistSong" onClick={() => handleSongDelete(song)}>Delete Song</button>

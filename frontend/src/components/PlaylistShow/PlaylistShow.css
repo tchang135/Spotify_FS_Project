@@ -154,7 +154,8 @@
     display: block;
     position: relative;
     top: 32vh;
-    left: -65vw;
+    left: -50vw;
+    width: 85%;
 }
 
 .playlistSongObject {
@@ -174,5 +175,16 @@
   color: white;
   display: flex;
   white-space: nowrap;
-  /* margin-left: 600px; */
+}
+
+.playlistSongTitle {
+  margin-top: 1.5vh;
+}
+
+.playlistSongArtist {
+  margin-top: 1.5vh;
+}
+
+.songDropdownContainer {
+  margin-top: 1.5vh;
 }
