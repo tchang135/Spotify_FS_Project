@@ -166,6 +166,14 @@
   margin-bottom: 30px;
 }
 
+.playlistSongObject:hover {
+  cursor: pointer;
+  background-color: rgba(123, 123, 123, 0.425);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  height: fit-content;
+}
+
 .playlistSongPhoto {
   height: 6vh;
   width: 3.5vw;
@@ -182,6 +190,7 @@
 .playlistSongWords {
   display: flex;
   flex-direction: column;
+  width: fit-content;
 }
 
 .playlistSongArtist {
@@ -191,5 +200,7 @@
 }
 
 .songDropdownContainer {
+  position: absolute;
   margin-top: 2vh;
+  left: 70vw;
 }
