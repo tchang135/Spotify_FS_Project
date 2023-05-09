@@ -39,7 +39,7 @@
     width: 87%;
   }
   
-  .playlistSongWords{
+  .albumSongWords{
     display: flex;
     flex-direction: column;
     width: 87%;

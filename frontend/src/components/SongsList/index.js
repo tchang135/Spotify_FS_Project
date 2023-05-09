@@ -83,7 +83,7 @@ const SongList = () => {
         <div className="songList">
         {songs.map((song) => (
           <div id="songItem" key={song.url} onClick={() => handleSongClick(song.url)}>
-            <div className="playlistSongWords">
+            <div className="albumSongWords">
               <p id="albumShowSongTitle">{song.title}</p>
               <p id="albumShowArtistName">{artist.name}</p>
             </div>

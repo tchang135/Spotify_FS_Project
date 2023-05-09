@@ -19,7 +19,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 20vw;
-  /* margin-top: vh; */
   padding-left: 4vw;
   padding-top: 14.5vh;
   margin-left: 20vw;
@@ -47,14 +46,15 @@
   padding-bottom: 10px; 
 }
 
-.playlistSongTitleHeader::before {
+.playlistSongTitleHeader::after {
   content: "";
-  position: relative;
+  display: block;
+  position: absolute;
   bottom: 0;
   left: 0;
-  width: 87%;
+  width: 85%;
   height: 1px;
-  background-color: rgba(72, 72, 72, 0.529); 
+  background-color: rgba(72, 72, 72, 0.529);
 }
 
 #dropdownPlaylist {
@@ -179,12 +179,15 @@
   white-space: nowrap;
 }
 
-.playlistSongTitle {
-  margin-top: 2vh;
+.playlistSongWords {
+  display: flex;
+  flex-direction: column;
 }
 
 .playlistSongArtist {
-  margin-top: 2vh;
+  margin-top: 2.5vh;
+  color: grey;
+  font-size: 15px;
 }
 
 .songDropdownContainer {
