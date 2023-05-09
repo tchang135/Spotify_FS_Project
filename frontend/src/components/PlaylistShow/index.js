@@ -142,7 +142,7 @@ const PlaylistShow = () => {
           <div className="playlistSongsList">
           {songs?.map((song) => {
             return (
-              <div key={song.id} className="playlistSongObject" onClick={() => handleSongPlay(song.id)}>
+              <div key={song.id} className="playlistSongObject" onClick={() => handleSongPlay(song.url)}>
                 {Object.values(albums).map((album) => (
                   album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
                 ))}
