@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { editPlaylist } from "../../store/playlist";
+import { editPlaylist, fetchPlaylists } from "../../store/playlist";
 import "./PlaylistEdit.css"
 
 const PlaylistEdit = ({ playlistId, setEditMode }) => {
@@ -15,6 +15,7 @@ const PlaylistEdit = ({ playlistId, setEditMode }) => {
       const updatedPlaylist = { ...playlist, title, description, public: isPublic };
       dispatch(editPlaylist(playlistId, updatedPlaylist)).then(() => {
         setEditMode(false);
+        dispatch(fetchPlaylists());
       });
     };
 
