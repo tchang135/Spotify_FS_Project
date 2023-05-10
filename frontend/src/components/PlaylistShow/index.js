@@ -35,6 +35,8 @@ const PlaylistShow = () => {
   const [editMode, setEditMode] = useState(false);
   const [playlistDropdownOpen, setPlaylistDropdownOpen] = useState(false);
   const [selectedSongId, setSelectedSongId] = useState(null);
+  const [songListUpdated, setSongListUpdated] = useState(false);
+
 
   const getAlbumById = (id) => {
     return Object.values(albums).find((album) => album.id === id);
@@ -65,13 +67,13 @@ const PlaylistShow = () => {
       dispatch(fetchAlbums());
       dispatch(fetchArtists())
     }
-  }, [playlistId, dispatch]);
+  }, [playlistId, dispatch, songListUpdated]);
 
   const handlePlaylistDelete = () => {
     if (window.confirm('Are you sure you want to delete this playlist?')) {
       dispatch(deletePlaylist(playlistId)).then(() => {
-        dispatch(fetchPlaylists());
         history.push('/');
+        dispatch(fetchPlaylists());
       });
     }
   };
@@ -85,8 +87,9 @@ const PlaylistShow = () => {
     const playlistSong = playlistSongs.find(
       (playlistSong) => playlistSong.songId === songId
     );
-    dispatch(deletePlaylistSong(playlistId, playlistSong.id.toString()));
-    dispatch(fetchPlaylist(playlistId))
+    dispatch(deletePlaylistSong(playlistId, playlistSong?.id.toString()));
+    // dispatch(fetchPlaylist(playlistId))
+    setSongListUpdated(!songListUpdated);
   };
 
   const handleSongPlay = (songId) => {
@@ -157,7 +160,7 @@ const PlaylistShow = () => {
                     <i class="fa-solid fa-ellipsis"></i>
                   </button>
                   {selectedSongId === song.id && (
-                    <button className="deletePlaylistSong" onClick={() => handleSongDelete(song)}>Delete Song</button>
+                    <button className="deletePlaylistSong" onClick={() => handleSongDelete(song.id)}>Delete Song</button>
                   )}
                 </div>
               </div>
