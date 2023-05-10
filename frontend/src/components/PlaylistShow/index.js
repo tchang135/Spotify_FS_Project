@@ -88,7 +88,6 @@ const PlaylistShow = () => {
       (playlistSong) => playlistSong.songId === songId
     );
     dispatch(deletePlaylistSong(playlistId, playlistSong?.id.toString()));
-    // dispatch(fetchPlaylist(playlistId))
     setSongListUpdated(!songListUpdated);
   };
 
@@ -109,7 +108,7 @@ const PlaylistShow = () => {
   };
 
   if (!playlistId) {
-    return <div>Loading...</div>;
+    return null
   }
 
   return (
