@@ -7,7 +7,6 @@
 .editingPlaylistHeader {
     font-size: 3vw;
     overflow-y: scroll;
-    /* height: 100%; */
 }
 
 .editTitleSection {
@@ -28,7 +27,7 @@
 }
 
 .editDescriptionHeader {
-    font-size: 20px;
+    font-size: 2vw;
     margin-bottom: 10px;
 }
 
