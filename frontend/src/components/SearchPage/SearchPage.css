@@ -48,7 +48,7 @@
     margin-bottom: 3vh;
     align-items: center;
     justify-content: left;
-    width: 50vw;
+    width: 75vw;
     padding: 1vw;
   }
 
@@ -63,7 +63,7 @@
     margin-bottom: 3vh;
     align-items: center;
     justify-content: left;
-    width: 50vw;
+    width: 75vw;
     padding: 1vw;
   }
 
@@ -81,11 +81,21 @@
   #resultSongTitleArtist {
     color: white;
     margin-left: 1vw;
-    margin-top: -2vh;
+  }
+
+  #resultSongTitle {
+    font-size: 1.3vw;
+  }
+
+  #resultSongArtist {
+    margin-top: 3vh;
+    font-size: 1vw;
+    color: rgb(193, 191, 191);
   }
 
   #resultSongAlbum {
     color: white;
     position: absolute;
-    left: 30vw;
+    left: 40vw;
+    font-size: 1.3vw;
   }
