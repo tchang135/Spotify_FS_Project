@@ -1,7 +1,7 @@
 .albumIndex {
     display: block;
-    margin-top: 100px;
-    margin-left: 300px;
+    margin-top: 15vh;
+    margin-left: 20vw;
     background-color: #121212;
     position: absolute;
     width: fit-content;
@@ -37,29 +37,29 @@
 }
 
 .spacer {
-    margin-bottom: 100px;
+    margin-bottom: 15vh;
 }
 
 .albumItem {
     display: grid;
     align-items: center;
-    margin-right: 5vw;
-    height: fit-content;
-    width: fit-content;
+    margin-right: 4vw;
+    height: 40vh;
+    width: 16vw;
     padding: 1vw;
 }
 
 .albumItem:hover {
     background-color: rgb(55, 54, 54);
-    height: fit-content;
     cursor: pointer;
+     height: 40vh;
     border-radius: 1vw;
 }
 
 #albumPhoto {
     width: 12vw;
     height: 24vh;
-    margin-bottom: 2vh;
+    margin-bottom: .5vh;
     box-sizing: border-box;
 }
 
