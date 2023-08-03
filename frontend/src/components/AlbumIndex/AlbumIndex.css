@@ -28,11 +28,13 @@
     font-size: 1.1vw;
     height: fit-content;
     font-weight: bold;
+    margin-left: .5vw;
 }
 
 .artistName {
     font-size: 1vw;
     height: fit-content;
+    margin-left: .5vw;
 }
 
 .spacer {
@@ -44,7 +46,7 @@
     align-items: center;
     margin-right: 4vw;
     height: 40vh;
-    width: 14vw;
+    width: 16vw;
     padding: 1vw;
 }
 
@@ -53,11 +55,11 @@
     cursor: pointer;
     height: 40vh;
     border-radius: 1vw;
-    width: 14vw;
+    width: 16vw;
 }
 
 #albumPhoto {
-    width: 12vw;
+    width: 13vw;
     height: 24vh;
     margin-bottom: .5vh;
     box-sizing: border-box;

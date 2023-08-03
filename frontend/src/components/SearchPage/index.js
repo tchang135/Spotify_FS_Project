@@ -84,8 +84,8 @@ const SearchPage = () => {
             <li key={albumItem.id}>
               <div className="resultAlbumItem" onClick={() => handleClickAlbum(albumItem.id)} >
                   <img id="resultAlbumPhoto" src={albumItem.photoUrl} alt=""/>
-                  <p id="resultTitle">{albumItem.title}</p>
-                  <p id="resultArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
+                  <p id="resultAlbumTitle">{albumItem.title}</p>
+                  <p id="resultAlbumArtist">{artists.find(artist => artist.id === albumItem.artistId)?.name}</p>
               </div>
             </li>
           ))}
