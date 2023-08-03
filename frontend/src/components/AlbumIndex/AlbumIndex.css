@@ -33,7 +33,6 @@
 .artistName {
     font-size: 1vw;
     height: fit-content;
-    
 }
 
 .spacer {
@@ -45,15 +44,16 @@
     align-items: center;
     margin-right: 4vw;
     height: 40vh;
-    width: 16vw;
+    width: 14vw;
     padding: 1vw;
 }
 
 .albumItem:hover {
     background-color: rgb(55, 54, 54);
     cursor: pointer;
-     height: 40vh;
+    height: 40vh;
     border-radius: 1vw;
+    width: 14vw;
 }
 
 #albumPhoto {
