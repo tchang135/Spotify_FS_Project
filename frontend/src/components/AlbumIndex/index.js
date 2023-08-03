@@ -2,6 +2,9 @@ import React, { useEffect} from "react";
 import AlbumItem from "./AlbumItem";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlbums } from "../../store/album";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './AlbumIndex.css'
 
 function AlbumIndex() {
@@ -18,9 +21,20 @@ function AlbumIndex() {
         return null
     } 
 
+    const carouselSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3, // Change the number of visible albums as per your preference
+        slidesToScroll: 1,
+    };
+
 
     return (
         <div className="albumIndex">
+            <Slider {...carouselSettings}>
+                
+            </Slider>
             <h1 id="indexAlbumText">Albums</h1>
                 <div className="albumList">
                 <>
@@ -28,10 +42,8 @@ function AlbumIndex() {
                     <AlbumItem
                     key={album.id}
                     album={album}
-                    // artist={artist}
                      />
                     ))}
-                    {/* <p className="albumPhoto">{artists.photo_url}</p> */}
                 </>
                 </div>
         </div>
