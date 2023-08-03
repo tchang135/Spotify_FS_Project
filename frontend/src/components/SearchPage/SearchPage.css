@@ -45,19 +45,16 @@
 
   .resultSongItem {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 3vh;
     align-items: center;
     justify-content: left;
-    width: fit-content;
-    padding: 10px;
+    width: 50vw;
+    padding: 1vw;
   }
 
   .resultSongItem:hover {
     background-color: rgb(55, 54, 54);
     display: flex;
-    height: fit-content;
-    width: fit-content;
-    padding: 10px;
     cursor: pointer;
     border-radius: 10px;
   }
@@ -68,29 +65,28 @@
     align-items: center;
     justify-content: left;
     width: fit-content;
-    padding: 10px;
   }
 
   .resultAlbumItem:hover {
     background-color: rgb(55, 54, 54);
     height: fit-content;
     width: fit-content;
-    padding: 10px;
     cursor: pointer;
     border-radius: 10px;
   }
 
   #resultAlbumPhoto {
-    height: 40px;
-    width: 40px;
+    height: 7vh;
+    width: 3.5vw;
   }
 
   #resultTitle {
     color: white;
-    margin-left: 10px;
+    margin-left: 1vw;
+    margin-top: -2vh;
   }
 
-  #resultArtist {
+  #resultSongAlbum {
     color: white;
     position: absolute;
     left: 30vw;

@@ -68,9 +68,12 @@ const SearchPage = () => {
                     </>
                   )}
                 </p>
-                <p id="resultTitle">{songItem.title}</p>
-                <p id="resultArtist">
-                  {artists.find((artist) => artist.id === songItem.artistId)?.name}
+                <div id="resultTitle">
+                  <p>{songItem.title}</p>
+                  <p>{artists.find((artist) => artist.id === songItem.artistId)?.name}</p>
+                </div>
+                <p id="resultSongAlbum">
+                  {albums.find((album) => album.id === songItem.albumId)?.title}
                 </p>
               </div>
             </li>
