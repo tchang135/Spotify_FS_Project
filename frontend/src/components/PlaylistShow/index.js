@@ -144,16 +144,18 @@ const PlaylistShow = () => {
           <div className="playlistSongsList">
           {songs?.map((song) => {
             return (
-              <div key={song.id} className="playlistSongObject" onClick={() => handleSongPlay(song.url)}>
-                {Object.values(albums).map((album) => (
-                  album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
-                ))}
-                <div className="playlistSongsWords">
-                  <p className="playlistSongTitle">{song.title}</p>
-                  {Object.values(artists).map((artist) => (
-                    artist.id === song.artistId && <p className="playlistSongArtist">{artist.name}</p>
-                  ))}
-                </div>
+              <div class="playlistSongObject"> 
+                  <div key={song.id}  onClick={() => handleSongPlay(song.url)}>
+                    {Object.values(albums).map((album) => (
+                      album.id === song.albumId && <img key={album.id} src={album.photoUrl} alt="" className="playlistSongPhoto"/>
+                    ))}
+                  </div>
+                    <div className="playlistSongsWords">
+                      <p className="playlistSongTitle">{song.title}</p>
+                      {Object.values(artists).map((artist) => (
+                        artist.id === song.artistId && <p className="playlistSongArtist">{artist.name}</p>
+                      ))}
+                    </div>
                 <div className="songDropdownContainer">
                   <button className="songDropdownButton" onClick={() => toggleSongDropdown(song.id)}>
                     <i class="fa-solid fa-ellipsis"></i>

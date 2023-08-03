@@ -153,17 +153,19 @@
 .playlistSongsList {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: left;
-  align-items: flex-start;
+  width: 80vw;
   margin-left: 22vw;
   margin-top: 29vh;
 }
 
 .playlistSongObject {
-  display: flex;
-  position: relative;
-  margin-bottom: 30px;
+  display: flex !important;
+  align-items: center;
+  flex: 1;
+  width: 75vw;
+  margin-bottom: 3vh;
+  height: 12vh;
+  padding: 1vw;
 }
 
 .playlistSongObject:hover {
@@ -171,14 +173,12 @@
   background-color: rgba(123, 123, 123, 0.425);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  height: fit-content;
 }
 
 .playlistSongPhoto {
   height: 6vh;
   width: 3.5vw;
   margin-right: 1vw;
-  position: relative;
 }
 
 .deletePlaylistSong {
@@ -187,10 +187,10 @@
   white-space: nowrap;
 }
 
-.playlistSongWords {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
+.playlistSongsWords {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
 }
 
 .playlistSongArtist {
@@ -201,6 +201,6 @@
 
 .songDropdownContainer {
   position: absolute;
-  margin-top: 2vh;
-  left: 70vw;
+  left: 95vw;
 }
+
