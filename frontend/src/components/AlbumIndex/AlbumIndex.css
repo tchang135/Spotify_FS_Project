@@ -10,8 +10,8 @@
 
 #indexAlbumText {
     color: white;
-    margin-bottom: 40px;
-    font-size: 22px;
+    margin-bottom: 8vh;
+    font-size: 1.8vw;
     font-weight: bold;
     height: fit-content;
 }
@@ -24,14 +24,14 @@
 }
 
 .albumTitle {
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom: 1.5vh;
+    font-size: 1.1vw;
     height: fit-content;
     font-weight: bold;
 }
 
 .artistName {
-    font-size: 14px;
+    font-size: 1vw;
     height: fit-content;
     
 }
