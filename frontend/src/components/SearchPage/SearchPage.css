@@ -62,7 +62,7 @@
     align-items: center;
     width: 75vw;
     padding: 1vw;
-    justify-content:flex-start
+    justify-content: left;
   }
 
   .resultAlbumItem:hover {
@@ -79,7 +79,7 @@
   #resultAlbumPhotoAlbum {
     height: 7vh;
     width: 3.5vw;
-    left: 0vw;
+    margin-right: 1vw;
   }
 
   #resultSongTitleArtist {
@@ -89,6 +89,18 @@
 
   #resultSongTitle {
     font-size: 1.3vw;
+  }
+
+  #resultAlbumTitle {
+    font-size: 1.3vw;
+    color: white;
+  }
+
+  #resultAlbumArtist {
+    font-size: 1.3vw;
+    color: white;
+    left: 40vw;
+    position: absolute;
   }
 
   #resultSongArtist {
@@ -103,4 +115,6 @@
     left: 40vw;
     font-size: 1.3vw;
   }
+
+ 
 
