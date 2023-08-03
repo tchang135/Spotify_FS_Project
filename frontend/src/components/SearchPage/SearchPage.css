@@ -1,4 +1,3 @@
-
 .searchResultsContainer {
   overflow-y: auto;
   width: 100%;
@@ -23,7 +22,6 @@
     left: 22vw;
     justify-content: left;
     height: fit-content;
-    /* width: 80%; */
   }
 
   .songsHeader {
@@ -62,9 +60,9 @@
     display: flex;
     margin-bottom: 3vh;
     align-items: center;
-    justify-content: left;
     width: 75vw;
     padding: 1vw;
+    justify-content:flex-start
   }
 
   .resultAlbumItem:hover {
@@ -76,6 +74,12 @@
   #resultAlbumPhoto {
     height: 7vh;
     width: 3.5vw;
+  }
+
+  #resultAlbumPhotoAlbum {
+    height: 7vh;
+    width: 3.5vw;
+    left: 0vw;
   }
 
   #resultSongTitleArtist {
@@ -99,3 +103,4 @@
     left: 40vw;
     font-size: 1.3vw;
   }
+
