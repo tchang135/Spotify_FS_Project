@@ -54,25 +54,23 @@
 
   .resultSongItem:hover {
     background-color: rgb(55, 54, 54);
-    display: flex;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 1vw;
   }
 
   .resultAlbumItem {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 3vh;
     align-items: center;
     justify-content: left;
-    width: fit-content;
+    width: 50vw;
+    padding: 1vw;
   }
 
   .resultAlbumItem:hover {
     background-color: rgb(55, 54, 54);
-    height: fit-content;
-    width: fit-content;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 1vw;
   }
 
   #resultAlbumPhoto {
@@ -80,7 +78,7 @@
     width: 3.5vw;
   }
 
-  #resultTitle {
+  #resultSongTitleArtist {
     color: white;
     margin-left: 1vw;
     margin-top: -2vh;
