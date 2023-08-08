@@ -99,7 +99,7 @@
   #resultAlbumArtist {
     font-size: 1.3vw;
     color: white;
-    left: 40vw;
+    left: 35vw;
     position: absolute;
   }
 
@@ -112,7 +112,7 @@
   #resultSongAlbum {
     color: white;
     position: absolute;
-    left: 40vw;
+    left: 35vw;
     font-size: 1.3vw;
   }
 
