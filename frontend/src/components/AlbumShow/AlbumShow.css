@@ -55,7 +55,7 @@
 
 .publishedYear::before {
     content: '\2022'; 
-    margin-right: 5px;
+    margin-right: 2vw;
     color: white; 
 }
 
