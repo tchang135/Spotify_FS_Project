@@ -202,6 +202,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap
+  bundler (~> 2.0)
   byebug
   jbuilder
   pg (~> 1.1)
