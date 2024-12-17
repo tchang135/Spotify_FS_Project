@@ -15,7 +15,8 @@ gem "puma", "~> 5.0"
 
 gem "bcrypt"
 
-gem "aws-sdk-s3"
+gem 'aws-sdk-s3', require: false
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
